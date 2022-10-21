@@ -2,11 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
 
 .logo {
-  min-width: 200px;
-  font-family: 'Ms Madi', cursive;
+  max-width: 250px;
   user-select: none;
 
   @media (max-width: $mobile-screen) {
-    font-size: 26px;
+    max-width: 300px;
+    padding-top: $separation-32;
+  }
+
+  @media (max-width: 320px) {
+    max-width: 200px;
+    padding-top: $separation-32;
   }
 }
