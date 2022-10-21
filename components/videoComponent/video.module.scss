@@ -1,0 +1,27 @@
+@import "../../styles/globals.module";
+
+.video {
+  width: 95%;
+  height: 500px;
+  border-radius: $border-radius-2;
+  border: none;
+  margin: $separation-48 auto;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+
+  @media (max-width: $laptop-screen) {
+    height: 400px;
+  }
+
+  @media (max-width: $tablet-screen) {
+    height: 300px;
+    width: 95%;
+  }
+
+  @media (max-width: $mobile-screen) {
+    height: 240px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../styles/globals.module";
+
+.faq {
+  min-height: 50px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  &.container {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: $base-color;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__answer {
+    position: relative;
+    z-index: 1;
+    text-align: justify;
+  }
+}
+
+.expand {
+  transition: all 0.3s ease;
+  opacity: 1;
+
+}
+
+.less {
+  opacity: 0;
+  margin-top: -100%;
+  transition: all 0.5s ease-in;
+}

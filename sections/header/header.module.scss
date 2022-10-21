@@ -1,0 +1,86 @@
+@import "../../styles/globals.module";
+
+.container {
+  padding: $separation-16;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__options {
+    list-style: none;
+    display: flex;
+    padding: 0;
+  }
+
+  &__options > li {
+    padding: $separation-16;
+    position: relative;
+    text-transform: capitalize;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 5px;
+      left: 0;
+      background-color: $primary-color;
+      transform-origin: bottom right;
+      transition: transform 0.5s ease-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+
+  &__search {
+    min-width: 200px;
+    display: flex;
+    align-content: center;
+    border-radius: $border-radius-2;
+    padding: 4px $separation-8;
+    background-color: $base-color;
+  }
+
+  &__search > span {
+    color: #646464;
+  }
+
+  &__search > input {
+    margin-left: $separation-8;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+
+    }
+  }
+
+  @media (max-width: $tablet-screen) {
+    justify-content: space-between;
+  }
+
+  @media (max-width: $mobile-screen) {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .container {
+    & > a > h1 {
+      margin-bottom: 0;
+      text-align: center;
+    }
+    &__options {
+      margin: 0;
+    }
+  }
+}

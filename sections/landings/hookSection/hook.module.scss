@@ -1,0 +1,38 @@
+@import "../../../styles/globals.module";
+
+.hook {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-color;
+  border-radius: $border-radius-2;
+  padding: $separation-16;
+  margin: 0 $separation-24;
+
+  &__content {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__actionButton {
+    margin: $separation-48 auto $separation-16;
+    width: 30%;
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .hook {
+    &__actionButton {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .hook {
+    margin: 0;
+    &__actionButton {
+      width: 100%;
+    }
+  }
+}

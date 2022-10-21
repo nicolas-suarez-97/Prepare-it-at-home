@@ -1,0 +1,15 @@
+@import "../../../styles/globals.module";
+
+.faq {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto $separation-62;
+}
+
+@media (max-width: $mobile-screen) {
+  .faq {
+    width: 100%;
+  }
+}

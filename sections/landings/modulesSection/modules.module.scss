@@ -1,0 +1,123 @@
+@import "../../../styles/globals.module";
+
+.modules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: $separation-16;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+
+    &.reduce {
+      height: 300px;
+      overflow: hidden;
+    }
+  }
+
+  &__module {
+    display: flex;
+    cursor: pointer;
+
+   & > span {
+      margin-left: $separation-32;
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+    position: relative;
+    padding-left: 50px;
+    padding-top: 10px;
+    list-style: none;
+    transition: all ease-out 0.5s;
+    counter-increment: content;
+    padding-bottom: 20px;
+
+
+    &::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 16px;
+      width: 10px;
+      height: 120%;
+      border-left: 2px solid $primary-color;
+    }
+    &:last-child::before {
+      border-left: none;
+    }
+  }
+
+  &__title {
+    transition: all ease-out 0.5s;
+    margin-top: 0;
+    text-transform: capitalize;
+
+    &::before {
+      content: counter(content);
+      font-size: 20px;
+      text-align: center;
+      display: inline-block;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border: 2px solid $primary-color;
+      border-radius: 50%;
+      background-color: #FFF;
+    }
+
+    &:last-child::before {
+      font-family: 'Material Icons';
+      content: 'military_tech';
+      color: #FFF;
+      font-size: 25px;
+      background-color: $primary-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: none;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    position: relative;
+    counter-increment: list;
+    display: flex;
+
+    & > span {
+      margin-right: $separation-16;
+      color: $primary-color;
+    }
+
+  }
+
+  &__shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: $white-gradient-ver;
+    height: 250px;
+    width: 100%;
+
+    &.expand {
+      display: none
+    }
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+}
+

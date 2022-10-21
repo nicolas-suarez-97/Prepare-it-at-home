@@ -1,0 +1,103 @@
+@import "../../../styles/globals.module";
+
+.getStarted {
+  background-color: $secondary-color;
+  border-radius: $border-radius-2;
+  padding: $separation-48;
+  margin:  $separation-62 $separation-24;
+
+  &__container {
+
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-right: $separation-16;
+  }
+
+  &__title {
+    text-align: justify;
+    margin: $separation-8 0;
+  }
+
+  &__subtitle {
+    text-align: justify;
+    color: #5b5b5b;
+  }
+
+  &__button {
+    margin: $separation-8 0;
+    width: 40%;
+  }
+
+  &__image {
+    height: 350px;
+    width: 350px;
+    transition: all ease-in-out 0.5s;
+
+  }
+}
+
+@media (max-width: $laptop-screen) {
+  .getStarted {
+
+    &__image {
+      width: 250px;
+      height: 250px;
+    }
+
+    &__content {
+      padding-right: 0;
+    }
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .getStarted {
+    &__container {
+      flex-wrap: wrap-reverse;
+      justify-content: center;
+    }
+
+    &__content {
+      width: 100%;
+      align-items: center;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__subtitle {
+      text-align: center;
+    }
+
+    &__image {
+      width: 250px;
+      height: 250px;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .getStarted {
+    padding: $separation-16;
+    margin: $separation-62 0 0;
+
+    &__button {
+      width: 100%;
+    }
+    &__image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

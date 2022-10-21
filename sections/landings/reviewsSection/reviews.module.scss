@@ -1,0 +1,105 @@
+@import "../../../styles/globals.module";
+
+.reviews {
+  overflow: hidden;
+  margin: $separation-24;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $separation-24;
+    background-color: $base-color;
+    box-shadow: $card-elevation-2;
+    border-radius: $border-radius-2;
+    width: 400px;
+    counter-increment: card;
+    margin: $separation-16 $separation-8;
+  }
+
+  &__description {
+    text-align: justify;
+    font-size: 12px;
+  }
+
+  &__bottomSection {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__picture {
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+  }
+
+  &__author {
+    margin-left: $separation-16;
+  }
+
+  &__pause {
+    justify-content: center;
+    display: none;
+
+    & > a {
+      cursor: pointer;
+    }
+  }
+}
+
+.gradient {
+  position: absolute;
+  background: $white-gradient-hor;
+  height: 100%;
+  width: 15%;
+  top: 0;
+}
+
+.right {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.left {
+  left: 0;
+}
+
+@media (max-width: $laptop-screen) {
+  .reviews {
+
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .reviews {
+    &__pause {
+      display: flex;
+    }
+
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .reviews {
+    margin: 0;
+
+    &__card {
+      width: 320px;
+      margin: $separation-16 4px;
+    }
+  }
+
+  .right {
+    display: none;
+  }
+
+  .left {
+    display: none;
+  }
+}

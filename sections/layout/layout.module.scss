@@ -1,0 +1,26 @@
+@import "../../styles/globals.module";
+
+.container {
+  border-radius: $border-radius-2;
+  margin: $separation-16 auto;
+  min-height: $min-layout-height;
+  max-width: $fullsize-screen;
+  background: $secondary-shadow-1;
+  padding: $separation-16;
+  box-shadow: $card-elevation-3;
+
+  @media (max-width: $laptop-screen) {
+    padding: $separation-8;
+    box-shadow: none;
+    margin-top: -8px;
+    border-radius: 0;
+  }
+}
+
+.layout {
+  position: relative;
+
+  @media (max-width: $mobile-screen) {
+    padding: $separation-16;
+  }
+}

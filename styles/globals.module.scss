@@ -1,0 +1,105 @@
+
+// Elevation
+$card-elevation-1:  0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$card-elevation-2:  0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$card-elevation-3:  0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$card-elevation-4:  0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$card-elevation-5:  0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+//Border
+$border-radius-1: 8px;
+$border-radius-2: 16px;
+$border-radius-3: 24px;
+$border-radius-4: 32px;
+$border-radius-5: 50px;
+
+//Colors
+$base-color: white;
+$primary-color: #CA0000FF;
+$secondary-color: #FEF5F5;
+$secondary-shadow-1: linear-gradient(180deg, $secondary-color 0%,  $base-color 10%);
+$white-gradient-ver: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255, 0.50) 25%, rgba(255,255,255, 0.20) 77%, rgba(255,255,255,0) 100%);
+$white-gradient-hor: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255, 0.50) 25%, rgba(255,255,255, 0.20) 77%, rgba(255,255,255,0) 100%);
+
+//Sizes
+$min-layout-height: 500px;
+$separation-8: 8px;
+$separation-16: 16px;
+$separation-24: 24px;
+$separation-32: 32px;
+$separation-40: 40px;
+$separation-48: 48px;
+$separation-56: 56px;
+$separation-62: 62px;
+
+$large-card-height: 416px;
+$large-card-width: 616px;
+$medium-card-height: 200px;
+$medium-card-width:  300px;
+$small-card-height:  130px;
+$small-card-width:  200px;
+$extra-small-card:  100px;
+
+$height-100: 100%;
+$width-100: 100%;
+
+//Card front shadow
+
+$front-shadow-1: linear-gradient(0deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.50) 25%, rgba(0,0,0,0.20) 77%, rgba(0,0,0,0) 100%);
+$front-shadow-2: linear-gradient(0deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.40) 25%, rgba(0,0,0,0.20) 77%, rgba(0,0,0,0) 100%);
+$front-shadow-3: linear-gradient(0deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.15) 25%, rgba(0,0,0,0.10) 50%, rgba(0,0,0,0) 100%);
+
+// Media dimensions
+$mobile-screen: 460px;
+$tablet-screen: 700px;
+$laptop-screen: 800px;
+$fullsize-screen: 1100px;
+
+.elevation0 {
+  box-shadow: none;
+}
+.elevation1 {
+  box-shadow: $card-elevation-1;
+}
+.elevation2 {
+  box-shadow: $card-elevation-2;
+}
+.elevation3 {
+  box-shadow: $card-elevation-3;
+}
+.elevation4 {
+  box-shadow: $card-elevation-4;
+}
+.elevation5 {
+  box-shadow: $card-elevation-5;
+}
+
+.title {
+  text-align: center;
+  text-transform: capitalize;
+  max-width: 80%;
+  margin: $separation-62 auto $separation-24;
+
+  @media (max-width: $mobile-screen) {
+    max-width: 100%;
+  }
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+
+  @media (max-width: $mobile-screen) {
+    width: 100%;
+  }
+}
+
+.rotateOn {
+  transform: rotate(180deg);
+  transition: 0.5s all ease;
+}
+
+.rotateOff {
+  transition: 0.5s all ease;
+}

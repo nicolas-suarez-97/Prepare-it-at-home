@@ -1,0 +1,48 @@
+@import "../../../styles/globals.module";
+
+.gallery {
+  padding: $separation-16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+  }
+
+  &__image {
+    max-width: 33%;
+    padding: $separation-8;
+    transition: all 0.5s ease-in-out;
+    border-radius: $border-radius-2;
+  }
+}
+
+@media (max-width: $laptop-screen) {
+  .gallery {
+    &__image {
+      max-width: 50%;
+    }
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .gallery {
+    &__image {
+      max-width: 50%;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .gallery {
+    padding: 0;
+
+    &__image {
+      max-width: 100%;
+    }
+  }
+}
