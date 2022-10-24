@@ -1,7 +1,12 @@
 import React, {useState} from "react";
 import styles from "./reviews.module.scss";
+import {ReviewsSectionType, ReviewItem} from "../../../types/Sections/ReviewsSectionType";
 
-const ReviewsSection = ({reviews}: any) => {
+type Props = {
+    reviews: ReviewsSectionType,
+}
+
+const ReviewsSection = ({reviews}: Props) => {
     const {title, items} = reviews;
     const [pause, setPause] = useState(false);
 
@@ -16,7 +21,7 @@ const ReviewsSection = ({reviews}: any) => {
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.reviews}>
                 <div className={`list ${pause ? 'pause' : ''}`}>
-                    {items.map((item: any, index: number) => (
+                    {items.map((item: ReviewItem, index: number) => (
                         <div key={index} className={styles.reviews__card}>
                             <div>
                                 <i className="material-icons">format_quote</i>
@@ -28,7 +33,7 @@ const ReviewsSection = ({reviews}: any) => {
                             </div>
                         </div>
                     ))}
-                    {items.map((item: any, index: number) => (
+                    {items.map((item: ReviewItem, index: number) => (
                         <div key={index} className={styles.reviews__card}>
                             <div>
                                 <i className="material-icons">format_quote</i>

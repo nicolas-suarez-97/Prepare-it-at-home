@@ -1,8 +1,16 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import styles from "./topBanner.module.scss";
 import { ActionButton, VideoComponent } from "../../../components";
+import {BannerSectionType} from "../../../types/Sections";
+import {LinkDataType} from "../../../types";
 
-const TopBannerSection = ({videoUrl, banner, linkData}: any) => {
+type Props = {
+    videoUrl: string,
+    banner: BannerSectionType,
+    linkData: LinkDataType,
+}
+
+const TopBannerSection = ({videoUrl, banner, linkData}: Props) => {
     const {title, subtitle, backgroundImage, isCircle, primaryButtonLabel, secondaryButtonLabel} = banner;
     linkData = {
         ...linkData,

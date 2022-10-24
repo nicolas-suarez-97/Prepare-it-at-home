@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./benefits.module.scss";
+import {BenefitsSectionType, BenefitItem} from "../../../types/Sections/BenefitsSectionType";
 
-const BenefitsSection = ({benefits}: any) => {
+type Props = {
+    benefits: BenefitsSectionType
+}
+
+const BenefitsSection = ({benefits}: Props) => {
     const {title, certificateUrl, warrantyUrl, benefitsList} = benefits;
     return (
         <section>
@@ -15,7 +20,7 @@ const BenefitsSection = ({benefits}: any) => {
                 </div>
                 <div className={styles.benefits__content}>
                     <ul className={styles.benefits__list}>
-                        {benefitsList.map((benefit: any, index: number) => (
+                        {benefitsList.map((benefit: BenefitItem, index: number) => (
                             <li key={index} className={styles.benefits__item}><span className="material-icons">{benefit.icon}</span>{benefit.label}</li>
                         ))}
                     </ul>

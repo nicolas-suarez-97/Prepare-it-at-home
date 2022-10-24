@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./producer.module.scss";
+import {ProducerSectionType} from "../../../types/Sections";
 
-const ProducerSection = ({producer}: any) => {
+type Props = {
+    producer: ProducerSectionType,
+}
+
+const ProducerSection = ({producer}: Props) => {
     const {title, description} = producer
     return (
         <section>

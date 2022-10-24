@@ -1,13 +1,18 @@
 import React from "react";
 import styles from "./gallery.module.scss";
+import {GallerySectionType} from "../../../types/Sections";
 
-const GallerySection = ({gallery}: any) => {
+type Props = {
+    gallery: GallerySectionType
+}
+
+const GallerySection = ({gallery}: Props) => {
     const {title, images} = gallery;
     return (
         <section className={styles.gallery}>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.gallery__container}>
-                {images.map((image: any, index: number)=> (
+                {images.map((image: string, index: number)=> (
                     <img key={index} src={image} className={styles.gallery__image} alt="" />
                 ))}
             </div>

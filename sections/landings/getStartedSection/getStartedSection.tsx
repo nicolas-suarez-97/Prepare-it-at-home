@@ -1,10 +1,16 @@
 import React from "react";
 import styles from "./getStarted.module.scss";
 import { ActionButton } from "../../../components";
+import {GetStartedSectionType} from "../../../types/Sections";
+import {LinkDataType} from "../../../types";
 
-const GetStartedSection = ({getStarted, linkData}: any) => {
+type Props = {
+    getStarted: GetStartedSectionType,
+    linkData: LinkDataType,
+}
+
+const GetStartedSection = ({getStarted, linkData}: Props) => {
     const {title, subtitle, imageUrl, buttonLabel} = getStarted;
-    const {url, discount, setIsModalOpen} = linkData
     linkData = {
         ...linkData,
         buttonStyle: styles.getStarted__button,

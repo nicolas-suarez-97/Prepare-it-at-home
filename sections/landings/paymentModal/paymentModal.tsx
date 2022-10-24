@@ -1,7 +1,14 @@
 import React from "react";
 import styles from "./paymentModal.module.scss";
+import {LinkDataType} from "../../../types";
 
-const PaymentModal = ({isModalOpen, setIsModalOpen, linkData}: any) => {
+type Props = {
+    isModalOpen: boolean,
+    setIsModalOpen: Function,
+    linkData: LinkDataType
+}
+
+const PaymentModal = ({isModalOpen, setIsModalOpen, linkData}: Props) => {
     const {url} = linkData;
 
     return (

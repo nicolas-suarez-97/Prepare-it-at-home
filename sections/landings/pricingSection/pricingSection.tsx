@@ -1,12 +1,19 @@
 import React, {useEffect, useState} from "react";
 import styles from "./pricing.module.scss";
 import { ActionButton } from "../../../components";
+import {PricingSectionType} from "../../../types/Sections";
+import {LinkDataType} from "../../../types";
 
-const PricingSection = ({pricing, linkData, value}: any) => {
+type Props = {
+    pricing: PricingSectionType,
+    linkData: LinkDataType,
+    value: number,
+}
+
+const PricingSection = ({pricing, linkData, value}: Props) => {
     const {label} = pricing;
     const [scrollPosition, setScrollPosition] = useState(0);
     const [hideSection, setHideSection] = useState(false);
-    const {url, discount, setIsModalOpen} = linkData
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);

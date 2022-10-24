@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./actionButton.module.scss";
 import * as ga from '../../lib/ga';
-import {LinkDataType} from "../../types/LinkDataType";
+import {LinkDataType} from "../../types";
 
 type Props = {
     linkData: LinkDataType

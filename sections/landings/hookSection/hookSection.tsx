@@ -1,10 +1,17 @@
 import React from "react";
 import styles from "./hook.module.scss";
 import { ActionButton } from "../../../components";
+import {HookSectionType} from "../../../types/Sections";
+import {LinkDataType} from "../../../types";
 
-const HookSection = ({hook, linkData}: any) => {
+type Props = {
+    hook: HookSectionType,
+    linkData: LinkDataType,
+}
+
+const HookSection = ({hook, linkData}: Props) => {
     const {title, content, buttonLabel} = hook;
-    const {url, discount, setIsModalOpen} = linkData
+
     linkData = {
         ...linkData,
         buttonStyle: styles.hook__actionButton,

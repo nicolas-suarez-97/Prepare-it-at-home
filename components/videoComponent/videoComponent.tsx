@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from "./video.module.scss";
 import ReactPlayer from "react-player";
-import {VideoType} from "../../types/VideoType";
+import {VideoType} from "../../types";
 
 const VideoComponent = ({videoUrl, play, setPlay}: VideoType) => {
     const [hasWindow, setHasWindow] = useState(false);

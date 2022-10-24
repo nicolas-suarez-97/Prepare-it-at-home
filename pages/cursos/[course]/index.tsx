@@ -1,45 +1,50 @@
 import React, {useState} from "react";
 import { Layout } from "../../../sections";
 import {
-    TopBannerSection,
-    HookSection,
     AchievementsSection,
-    ProducerSection,
-    ModulesSection,
     BenefitsSection,
-    ReviewsSection,
-    GetStartedSection,
     FaqSection,
-    PricingSection,
-    PaymentModal,
     GallerySection,
+    GetStartedSection,
+    HookSection,
+    ModulesSection,
+    PaymentModal,
+    PricingSection,
+    ProducerSection,
+    ReviewsSection,
+    TopBannerSection,
 } from "../../../sections/landings";
 import fs from "fs";
+import {LandingsType, LinkDataType} from "../../../types";
 
-const Course = ({course}: any) => {
+type Props = {
+    course: string
+}
+
+const Course = ({course}: Props) => {
     console.log(course)
     const {LandingData} = require(`../../../json/${course}.js`);
     const {
-        pageType,
-        courseUrl,
-        banner,
-        hook,
-        videoUrl,
-        benefits,
         achievement,
-        modules,
-        reviews,
-        getStarted,
-        gallery,
-        producer,
+        banner,
+        benefits,
+        courseUrl,
         faq,
-        pricing,
-        value,
-        redirect,
+        gallery,
+        getStarted,
+        hook,
         links,
-    } = LandingData;
+        modules,
+        pageType,
+        pricing,
+        producer,
+        redirect,
+        reviews,
+        value,
+        videoUrl,
+    }: LandingsType = LandingData;
     const [isModalOpen, setIsModalOpen] = useState(false)
-    let linkData = {
+    let linkData: LinkDataType = {
         ...links[value],
         course
     }

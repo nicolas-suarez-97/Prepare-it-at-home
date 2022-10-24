@@ -1,7 +1,9 @@
 export type LinkDataType = {
-    url: string,
-    label: string,
-    buttonStyle: string,
-    onClickAction: Function,
+    buttonStyle?: string,
     course: string,
+    discount?: number,
+    isModalOpen?: boolean,
+    label?: string,
+    onClickAction?: Function,
+    url: string,
 };

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import styles from "./faqComponent.module.scss";
-import {FaqItemType} from "../../types/FaqItemType";
+import {FaqItem} from "../../types/Sections/FaqSectionType";
 
 type Props = {
-    item: FaqItemType
+    item: FaqItem
 }
 
 const FaqComponent = ({item}: Props) => {
