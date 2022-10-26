@@ -18,6 +18,7 @@ type Links = {
 }
 
 export type LandingsType = {
+    _id?: any,
     id: string,
     creationDate: string,
     modificationDate: string,

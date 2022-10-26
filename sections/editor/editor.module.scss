@@ -1,0 +1,27 @@
+@import "../../styles/globals.module";
+
+
+.section {
+
+  &__title {
+    text-transform: uppercase;
+  }
+}
+
+.attribute {
+  display: flex;
+  align-items: center;
+
+  &__label {
+    width: 20%;
+    font-weight: bold;
+    margin-right: $separation-16;
+  }
+
+  &__input {
+    height: 30px;
+    border-radius: 5px;
+    border: solid 0.2px;
+    width: 100%;
+  }
+}

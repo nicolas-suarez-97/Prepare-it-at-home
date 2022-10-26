@@ -6,11 +6,16 @@
 }
 
 .editor {
+  padding: 0 $separation-32;
   width: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .landing {
-  border: solid 5px gray;
+  border: solid 5px;
   border-radius: 10px;
   width: 50%;
   height: 95%;
@@ -19,4 +24,51 @@
   overflow: hidden;
   overflow-y: scroll;
   resize: both;
+}
+
+.header {
+  position: sticky;
+  left: 0;
+  top: 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: $card-elevation-1;
+  border-radius: $border-radius-1;
+  padding: $separation-8;
+}
+
+.button_container {
+  display: flex;
+  justify-content: end;
+
+  &__button {
+    background-color: $primary-color;
+    border: $primary-color 1px solid;
+    border-radius: $border-radius-5;
+    padding: $separation-8;
+    color: white;
+    transition: all ease-out 0.3s;
+    text-align: center;
+    min-width: 100px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover {
+      border: $primary-color 1px solid;
+      background-color: $base-color;
+      color: $primary-color;
+    }
+  }
+}
+
+.landing_id {
+  height: 30px;
+  border: none;
+  width: 50%;
 }
