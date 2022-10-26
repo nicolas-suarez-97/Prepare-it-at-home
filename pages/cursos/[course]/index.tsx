@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { Layout } from "../../../sections";
 import {
     AchievementsSection,
@@ -14,16 +14,15 @@ import {
     ReviewsSection,
     TopBannerSection,
 } from "../../../sections/landings";
-import fs from "fs";
 import {LandingsType, LinkDataType} from "../../../types";
+import {getAllCourse, getCourse} from "../../../services/course/courseService";
 
 type Props = {
-    course: string
+    course: string,
+    landingData: LandingsType,
 }
 
-const Course = ({course}: Props) => {
-    console.log(course)
-    const {LandingData} = require(`../../../json/${course}.js`);
+const Course = ({course, landingData}: Props) => {
     const {
         achievement,
         banner,
@@ -42,8 +41,12 @@ const Course = ({course}: Props) => {
         reviews,
         value,
         videoUrl,
-    }: LandingsType = LandingData;
+    } = landingData;
+
     const [isModalOpen, setIsModalOpen] = useState(false)
+    useEffect(() => {
+        document.body.style.overflowY = isModalOpen ? 'hidden' : 'scroll'
+    }, [isModalOpen])
     let linkData: LinkDataType = {
         ...links[value],
         course
@@ -125,14 +128,16 @@ const Course = ({course}: Props) => {
 }
 
 export async function getStaticProps({params}: any) {
+    const landingData: LandingsType = await getCourse({id: params.course})
 
-    return { props: { course: params.course} }
+    return { props: { course: params.course, landingData} }
 }
 
 export async function getStaticPaths() {
-    const filenames = fs.readdirSync('./json')
-    const paths = filenames.map(name => ({
-        params: {course: name.replace('.js', '')}
+    const courses = await getAllCourse();
+
+    const paths = courses.map((course: LandingsType) => ({
+        params: {course: course.id}
     }))
 
     return { paths, fallback: false }
