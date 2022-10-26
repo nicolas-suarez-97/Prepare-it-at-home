@@ -8,18 +8,16 @@ type Props = {
 
 const EditorBannerSection = ({data, setData}: Props) => {
     const {banner} = data;
-    console.log({banner})
 
     return (
         <section>
             <input
                 type="text"
                 value={banner.title}
-                placeholder="Video Url"
+                placeholder="Banner Title"
                 onChange={e => {
-                    const auxBanner = banner;
-                    auxBanner.title = e.target.value
-                    setData({...data, banner: auxBanner})
+                    banner.title = e.target.value
+                    setData({...data, banner})
                 }}
             />
         </section>

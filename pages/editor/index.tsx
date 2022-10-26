@@ -26,7 +26,6 @@ const Editor = ({landingData}: Props) => {
                     landingData={data}
                 />
             </div>
-
         </section>
     );
 }
@@ -34,7 +33,7 @@ const Editor = ({landingData}: Props) => {
 export async function getStaticProps({params}: any) {
     const landingData: LandingsType = await getCourse({id: 'landing'})
 
-    return { props: { landingData }}
+    return {props: {landingData}}
 }
 
 export default Editor;
