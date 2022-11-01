@@ -13,6 +13,7 @@ type Props = {
 
 const Editor = ({landingData}: Props) => {
     const [data, setData] = useState(JSON.parse(JSON.stringify(landingData)));
+    const [showLanding, setShowLanding] = useState(false);
     const router = useRouter();
 
     const focus = (sectionId: string) => {
@@ -21,7 +22,7 @@ const Editor = ({landingData}: Props) => {
 
     return (
         <section className={style.container}>
-            <div className={style.editor}>
+            <div className={`${style.editor} ${showLanding ? style.hide : style.show}`}>
                 <div className={style.header}>
                     <input
                         className={style.landing_id}
@@ -55,13 +56,18 @@ const Editor = ({landingData}: Props) => {
                     original={landingData}
                     focus={focus}
                 />
+                <h1>Otra cosa</h1>
             </div>
-            <div className={style.landing}>
+            <div className={`${style.landing} ${showLanding ? style.show : style.hide}`}>
                 <Course
                     course="landing"
                     landingData={data}
                 />
             </div>
+            <button
+                className={`${style.button_container__button} ${style.toogle_view}`}
+                onClick={() => setShowLanding(!showLanding)}
+            >{showLanding ? 'Editor' : 'Landing'}</button>
         </section>
     );
 }

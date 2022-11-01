@@ -15,9 +15,9 @@ const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps
 
     const iconSelector = (x: number, y: number, index: number) => {
         setItemIndex(index)
-        setShowIconSelector(true);
         setXCoord(x);
         setYCoord(y);
+        setShowIconSelector(true);
     }
 
     const hideIconSelector = () => {
@@ -92,7 +92,6 @@ const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps
                 yCoord={yCoord}
                 selectIcon={selectIcon}
             />
-
         </section>
     );
 }

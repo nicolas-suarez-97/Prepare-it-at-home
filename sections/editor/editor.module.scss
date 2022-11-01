@@ -25,3 +25,11 @@
     width: 100%;
   }
 }
+
+@media (max-width: $mobile-screen) {
+  .attribute {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+}
