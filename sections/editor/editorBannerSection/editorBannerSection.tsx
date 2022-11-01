@@ -1,18 +1,16 @@
 import React from "react";
-import {LandingsType} from "../../../types";
+import {EditorProps} from "../../../types";
 import style from "../editor.module.scss";
+import {LandingIds} from "../../../utils/constants";
 
-type Props = {
-    data: LandingsType,
-    setData: Function,
-    original: LandingsType,
-}
-
-const EditorBannerSection = ({data, setData, original}: Props) => {
+const EditorBannerSection = ({data, setData, original, focus}: EditorProps) => {
     const {banner} = data;
 
     return (
-        <section className={style.section}>
+        <section
+            className={style.section}
+            onFocus={() => focus(LandingIds.BANNER_SECTION)}
+        >
             <h2 className={style.section__title}>Banner</h2>
             <div className={style.attribute}>
                 <h5 className={style.attribute__label}>Título</h5>
@@ -49,6 +47,14 @@ const EditorBannerSection = ({data, setData, original}: Props) => {
                     placeholder={original.banner.backgroundImage}
                     onChange={e => {
                         banner.backgroundImage= e.target.value
+                        setData({...data, banner})
+                    }}
+                />
+                <input
+                    checked={banner.isCircle}
+                    type="checkbox"
+                    onChange={e => {
+                        banner.isCircle = !banner.isCircle
                         setData({...data, banner})
                     }}
                 />

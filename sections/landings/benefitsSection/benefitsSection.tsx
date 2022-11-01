@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./benefits.module.scss";
 import {BenefitsSectionType, BenefitItem} from "../../../types/Sections/BenefitsSectionType";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     benefits: BenefitsSectionType
@@ -9,7 +10,7 @@ type Props = {
 const BenefitsSection = ({benefits}: Props) => {
     const {title, certificateUrl, warrantyUrl, benefitsList} = benefits;
     return (
-        <section>
+        <section id={LandingIds.BENEFITS_SECTION}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.benefits}>
                 <div className={styles.benefits__imagesContainer}>

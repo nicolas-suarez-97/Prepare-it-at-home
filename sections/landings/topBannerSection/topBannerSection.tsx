@@ -3,6 +3,7 @@ import styles from "./topBanner.module.scss";
 import { ActionButton, VideoComponent } from "../../../components";
 import {BannerSectionType} from "../../../types/Sections";
 import {LinkDataType} from "../../../types";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     videoUrl: string,
@@ -31,7 +32,7 @@ const TopBannerSection = ({videoUrl, banner, linkData}: Props) => {
 
     return (
         <>
-            <section className={styles.banner}>
+            <section className={styles.banner} id={LandingIds.BANNER_SECTION}>
                 <div className={styles.banner__content}>
                     <h1 className={styles.banner__title}>{title}</h1>
                     <h2 className={styles.banner__subtitle}>{subtitle}</h2>

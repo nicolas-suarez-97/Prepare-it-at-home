@@ -1,9 +1,11 @@
 import React, {useState} from "react";
 import Course from "../cursos/[course]";
 import style from "./editor.module.scss";
-import {EditorBannerSection} from "../../sections/editor";
+import {EditorAchievementsSection, EditorBannerSection, EditorHookSection} from "../../sections/editor";
 import {LandingsType} from "../../types";
 import {getCourse} from "../../services/course/courseService";
+import {useRouter} from "next/router";
+import {LandingIds} from "../../utils/constants";
 
 type Props = {
     landingData: LandingsType
@@ -11,6 +13,11 @@ type Props = {
 
 const Editor = ({landingData}: Props) => {
     const [data, setData] = useState(JSON.parse(JSON.stringify(landingData)));
+    const router = useRouter();
+
+    const focus = (sectionId: string) => {
+        router.push(`#${sectionId}`);
+    }
 
     return (
         <section className={style.container}>
@@ -34,6 +41,19 @@ const Editor = ({landingData}: Props) => {
                     data={data}
                     setData={setData}
                     original={landingData}
+                    focus={focus}
+                />
+                <EditorHookSection
+                    data={data}
+                    setData={setData}
+                    original={landingData}
+                    focus={focus}
+                />
+                <EditorAchievementsSection
+                    data={data}
+                    setData={setData}
+                    original={landingData}
+                    focus={focus}
                 />
             </div>
             <div className={style.landing}>

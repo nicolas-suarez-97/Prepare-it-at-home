@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import styles from "./reviews.module.scss";
 import {ReviewsSectionType, ReviewItem} from "../../../types/Sections/ReviewsSectionType";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     reviews: ReviewsSectionType,
@@ -17,7 +18,7 @@ const ReviewsSection = ({reviews}: Props) => {
     }
 
     return (
-        <section>
+        <section id={LandingIds.REVIEWS_SECTION}>
             <h2 className={styles.title}>{title}</h2>
             <div className={styles.reviews}>
                 <div className={`list ${pause ? 'pause' : ''}`}>

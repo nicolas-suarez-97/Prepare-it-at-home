@@ -33,7 +33,6 @@ export const LandingData = {
         title: '¿Has sentido que la diabetes te ha quitado el placer de disfrutar la comida?',
         content: 'Con el MasterClass COMIDA MEXICANA PARA DIABÉTICOS, elaborarás los platillos mexicanos que amas, de manera saludable y sin sacrificar su delicioso sabor.',
         buttonLabel: 'Registrarme',
-        buttonAction: '/',
     },
     achievement: {
         title: '¿Qué vas a lograr?',

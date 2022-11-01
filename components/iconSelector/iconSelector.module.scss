@@ -1,0 +1,41 @@
+@import "../../styles/globals.module";
+
+.container {
+  background-color: white;
+  border-radius: $border-radius-2;
+  box-shadow: $card-elevation-2;
+  height: 280px;
+  width: 200px;
+  overflow: hidden;
+  overflow-y: scroll;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: $separation-8;
+  position: absolute;
+  display: flex;
+
+  &::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.icon {
+  width: $separation-32;
+  height: $separation-32;
+  border-radius: $border-radius-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: gainsboro;
+  }
+}

@@ -3,6 +3,7 @@ import styles from "./hook.module.scss";
 import { ActionButton } from "../../../components";
 import {HookSectionType} from "../../../types/Sections";
 import {LinkDataType} from "../../../types";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     hook: HookSectionType,
@@ -19,7 +20,7 @@ const HookSection = ({hook, linkData}: Props) => {
     }
 
     return (
-        <section className={styles.hook}>
+        <section className={styles.hook} id={LandingIds.HOOK_SECTION}>
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.hook__content} dangerouslySetInnerHTML={{__html: content}} />
             <ActionButton

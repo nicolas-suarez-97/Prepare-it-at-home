@@ -1,6 +1,7 @@
 import React, {useRef, useState} from "react";
 import styles from "./modules.module.scss";
 import {ModulesSectionType, ModuleStep} from "../../../types/Sections/ModulesSectionType";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     modules: ModulesSectionType,
@@ -24,7 +25,7 @@ const ModulesSection = ({modules}: Props) => {
     }
 
     return (
-        <section className={styles.modules} ref={ref}>
+        <section className={styles.modules} ref={ref} id={LandingIds.MODULES_SECTION}>
             <h2 className={styles.title} id="modules">{title}</h2>
             <div className={`${styles.modules__container} ${expand ? '' : styles.reduce}`}>
                 <div>

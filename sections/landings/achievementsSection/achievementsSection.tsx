@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./achievement.module.scss";
 import { AchievementsSectionType, AchievementItem } from "../../../types/Sections/AchievementsSectionType";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     achievement: AchievementsSectionType
@@ -18,7 +19,7 @@ const AchievementsSection = ({achievement}: Props) => {
     ]
 
     return (
-        <section>
+        <section id={LandingIds.ACHIEVEMENTS_SECTION}>
             <h2 className={styles.title}>{achievement.title}</h2>
             <ul className={styles.achievement__content}>
                 {achievement.items.map((i: AchievementItem, index: number) => (

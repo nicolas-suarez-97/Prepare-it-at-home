@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./paymentModal.module.scss";
 import {LinkDataType} from "../../../types";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     isModalOpen: boolean,
@@ -12,7 +13,11 @@ const PaymentModal = ({isModalOpen, setIsModalOpen, linkData}: Props) => {
     const {url} = linkData;
 
     return (
-        <section className={isModalOpen ? styles.modal : styles.hide} onClick={() => setIsModalOpen(false)}>
+        <section
+            className={isModalOpen ? styles.modal : styles.hide}
+            onClick={() => setIsModalOpen(false)}
+            id={LandingIds.PAYMENT_MODAL_SECTION}
+        >
             <div className={styles.modal__container} onClick={() => false}>
                 <iframe
                     src={url}

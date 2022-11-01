@@ -3,6 +3,7 @@ import styles from "./getStarted.module.scss";
 import { ActionButton } from "../../../components";
 import {GetStartedSectionType} from "../../../types/Sections";
 import {LinkDataType} from "../../../types";
+import {LandingIds} from "../../../utils/constants";
 
 type Props = {
     getStarted: GetStartedSectionType,
@@ -18,7 +19,7 @@ const GetStartedSection = ({getStarted, linkData}: Props) => {
     }
 
     return (
-        <section className={styles.getStarted}>
+        <section className={styles.getStarted} id={LandingIds.GET_STARTED_SECTION}>
             <div className={styles.getStarted__container}>
                 <div className={styles.getStarted__content}>
                     <h1 className={styles.getStarted__title}>{title}</h1>
