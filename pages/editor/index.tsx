@@ -1,11 +1,18 @@
 import React, {useState} from "react";
 import Course from "../cursos/[course]";
 import style from "./editor.module.scss";
-import {EditorAchievementsSection, EditorBannerSection, EditorHookSection} from "../../sections/editor";
+import {
+    EditorAchievementsSection,
+    EditorBannerSection,
+    EditorGallerySection,
+    EditorHookSection
+} from "../../sections/editor";
 import {LandingsType} from "../../types";
 import {getCourse} from "../../services/course/courseService";
 import {useRouter} from "next/router";
 import {LandingIds} from "../../utils/constants";
+import EditorProducerSection from "../../sections/editor/editorProducerSection/editorProducerSection";
+import EditorModulesSection from "../../sections/editor/editorModulesSection/editorModulesSection";
 
 type Props = {
     landingData: LandingsType
@@ -56,7 +63,25 @@ const Editor = ({landingData}: Props) => {
                     original={landingData}
                     focus={focus}
                 />
-                <h1>Otra cosa</h1>
+                <EditorGallerySection
+                    data={data}
+                    setData={setData}
+                    original={landingData}
+                    focus={focus}
+                />
+                <EditorProducerSection
+                    data={data}
+                    setData={setData}
+                    original={landingData}
+                    focus={focus}
+                />
+                <EditorModulesSection
+                    data={data}
+                    setData={setData}
+                    original={landingData}
+                    focus={focus}
+                />
+                <br/>
             </div>
             <div className={`${style.landing} ${showLanding ? style.show : style.hide}`}>
                 <Course

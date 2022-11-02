@@ -5,6 +5,7 @@ import achievementsStyles from "./editorAchievementsSection.module.scss";
 import {LandingIds} from "../../../utils/constants";
 import {AchievementItem} from "../../../types/Sections/AchievementsSectionType";
 import {IconSelector} from "../../../components";
+import {Icons} from "../../../utils/icons";
 
 const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps) => {
     const {achievement} = data;
@@ -58,15 +59,15 @@ const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps
                 <i className={'material-icons'} onClick={e => {
                     achievement.items.push({label: 'New', icon: 'arrow_drop_down'})
                     setData({...data, achievement})
-                }}>add</i>
+                }}>{Icons.ADD}</i>
             </div>
             {achievement.items.map((item: AchievementItem, index: number) => (
                 <div key={index}>
                     <div className={style.attribute}>
                         <h5 className={style.attribute__label}>Elemento {index}</h5>
-                        <input
+                        <textarea
                             value={item.label}
-                            className={style.attribute__input}
+                            className={`${style.attribute__input} ${style.textarea}`}
                             onChange={e => {
                                 achievement.items[index].label = e.target.value
                                 setData({...data, achievement})
@@ -82,7 +83,7 @@ const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps
                                 achievement.items.splice(index, 1)
                                 setData({...data, achievement})
                             }}
-                        >delete</i>
+                        >{Icons.DELETE}</i>
                     </div>
                 </div>
             ))}
