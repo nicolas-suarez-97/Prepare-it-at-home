@@ -4,13 +4,12 @@ import style from "./editor.module.scss";
 import {
     EditorAchievementsSection,
     EditorBannerSection, EditorBenefitsSection, EditorFaqSection,
-    EditorGallerySection,
+    EditorGallerySection, EditorGetStartedSection,
     EditorHookSection, EditorReviewsSection
 } from "../../sections/editor";
 import {LandingsType} from "../../types";
 import {getCourse} from "../../services/course/courseService";
 import {useRouter} from "next/router";
-import {LandingIds} from "../../utils/constants";
 import EditorProducerSection from "../../sections/editor/editorProducerSection/editorProducerSection";
 import EditorModulesSection from "../../sections/editor/editorModulesSection/editorModulesSection";
 import {IconSelector} from "../../components";
@@ -123,6 +122,12 @@ const Editor = ({landingData}: Props) => {
                         iconSelector={iconSelector}
                     />
                     <EditorReviewsSection
+                        data={data}
+                        setData={setData}
+                        original={landingData}
+                        focus={focus}
+                    />
+                    <EditorGetStartedSection
                         data={data}
                         setData={setData}
                         original={landingData}

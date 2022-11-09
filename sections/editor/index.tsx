@@ -5,6 +5,7 @@ import EditorGallerySection from "./editorGallerySection/editorGallerySection";
 import EditorBenefitsSection from "./editorBenefitsSection/editorBenefitsSection";
 import EditorReviewsSection from "./editorReviewsSection/editorReviewsSection";
 import EditorFaqSection from "./editorFaqSection/editorFaqSection";
+import EditorGetStartedSection from "./editorGetStartedSection/editorGetStartedSection";
 
 export {
     EditorBannerSection,
@@ -14,4 +15,5 @@ export {
     EditorBenefitsSection,
     EditorReviewsSection,
     EditorFaqSection,
+    EditorGetStartedSection,
 }
