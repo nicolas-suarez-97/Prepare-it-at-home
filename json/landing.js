@@ -58,7 +58,7 @@ export const LandingData = {
     benefits: {
         title: 'Beneficios adicionales',
         certificateUrl: 'https://static-media.hotmart.com/NDoojV9NachXySydNSrFAhcwNKw=/1024x709/filters:quality(100)/hotmart/checkout_custom/e1fd7c77-f4c7-405f-814c-03d289e95707/ki45bn26l.jpg',
-        warrantyUrl: 'https://el-socio.com/wp-content/uploads/2020/10/Garantia.png',
+        warrantyUrl: '/img/garantia7.png',
         benefitsList: [
             {
                 icon: 'workspace_premium',

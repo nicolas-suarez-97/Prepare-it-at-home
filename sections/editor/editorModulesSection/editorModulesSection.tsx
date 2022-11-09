@@ -1,41 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 import {EditorProps} from "../../../types";
 import style from "../editor.module.scss";
 import {LandingIds} from "../../../utils/constants";
-import {IconSelector} from "../../../components";
 import {ModuleStep} from "../../../types/Sections/ModulesSectionType";
 import {Icons} from "../../../utils/icons";
 
 
-const EditorModulesSection = ({data, setData, original, focus}: EditorProps) => {
+const EditorModulesSection = ({data, setData, original, focus, iconSelector}: EditorProps) => {
     const {modules} = data;
-    const [showIconSelector, setShowIconSelector] = useState(false);
-    const [xCoord, setXCoord] = useState(0);
-    const [yCoord, setYCoord] = useState(0);
 
-    const iconSelector = (x: number, y: number) => {
-        setXCoord(x);
-        setYCoord(y);
-        setShowIconSelector(true);
-    }
-
-    const hideIconSelector = () => {
-        setShowIconSelector(false);
-    }
-
-    const selectIcon = (icon: string) => {
+    const selectIcon = (icon: string, index: number) => {
         modules.itemsIcon = icon
         setData({...data, modules})
-        setShowIconSelector(false)
-        setYCoord(0)
-        setXCoord(0)
     }
-
 
     return (
         <section
             className={style.section}
-            onClickCapture={() => hideIconSelector()}
             onFocus={() => focus(LandingIds.MODULES_SECTION)}
         >
             <h2 className={style.section__title}>Modules</h2>
@@ -53,7 +34,7 @@ const EditorModulesSection = ({data, setData, original, focus}: EditorProps) => 
                 />
                 <i
                     className="material-icons"
-                    onClick={e => (iconSelector(e.screenX, e.screenY))}
+                    onClick={e => (iconSelector !== undefined ? iconSelector(e.screenX, e.screenY, selectIcon) : null)}
                 >{modules.itemsIcon}</i>
                 <i
                     className="material-icons"
@@ -116,12 +97,6 @@ const EditorModulesSection = ({data, setData, original, focus}: EditorProps) => 
                     </div>
                 </div>
             ))}
-            <IconSelector
-                isShown={showIconSelector}
-                xCoord={xCoord}
-                yCoord={yCoord}
-                selectIcon={selectIcon}
-            />
         </section>
     );
 }

@@ -5,4 +5,5 @@ export type EditorProps = {
     setData: Function,
     original: LandingsType,
     focus: Function,
+    iconSelector?: Function
 }

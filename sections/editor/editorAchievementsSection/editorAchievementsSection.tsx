@@ -1,42 +1,22 @@
-import React, {useState} from "react";
+import React from "react";
 import {EditorProps} from "../../../types";
 import style from "../editor.module.scss";
 import achievementsStyles from "./editorAchievementsSection.module.scss";
 import {LandingIds} from "../../../utils/constants";
 import {AchievementItem} from "../../../types/Sections/AchievementsSectionType";
-import {IconSelector} from "../../../components";
 import {Icons} from "../../../utils/icons";
 
-const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps) => {
+const EditorAchievementsSection = ({data, setData, original, focus, iconSelector}: EditorProps) => {
     const {achievement} = data;
-    const [showIconSelector, setShowIconSelector] = useState(false);
-    const [xCoord, setXCoord] = useState(0);
-    const [yCoord, setYCoord] = useState(0);
-    const [itemIndex, setItemIndex] = useState(-1);
 
-    const iconSelector = (x: number, y: number, index: number) => {
-        setItemIndex(index)
-        setXCoord(x);
-        setYCoord(y);
-        setShowIconSelector(true);
-    }
-
-    const hideIconSelector = () => {
-        setShowIconSelector(false);
-    }
-
-    const selectIcon = (icon: string) => {
-        achievement.items[itemIndex].icon = icon
+    const selectIcon = (icon: string, index: number) => {
+        achievement.items[index].icon = icon
         setData({...data, achievement})
-        setShowIconSelector(false)
-        setYCoord(0)
-        setXCoord(0)
     }
 
     return (
         <section
             className={style.section}
-            onClickCapture={() => hideIconSelector()}
             onFocus={() => focus(LandingIds.ACHIEVEMENTS_SECTION)}
         >
             <h2 className={style.section__title}>Achievements</h2>
@@ -75,7 +55,7 @@ const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps
                         />
                         <i
                             className={'material-icons'}
-                            onClick={e => (iconSelector(e.screenX, e.screenY, index))}
+                            onClick={e => (iconSelector !== undefined ? iconSelector(e.screenX, e.screenY, selectIcon, index) : null)}
                         >{item.icon}</i>
                         <i
                             className={'material-icons'}
@@ -87,12 +67,6 @@ const EditorAchievementsSection = ({data, setData, original, focus}: EditorProps
                     </div>
                 </div>
             ))}
-            <IconSelector
-                isShown={showIconSelector}
-                xCoord={xCoord}
-                yCoord={yCoord}
-                selectIcon={selectIcon}
-            />
         </section>
     );
 }
