@@ -15,7 +15,7 @@ import {
     TopBannerSection,
 } from "../../../sections/landings";
 import {LandingsType, LinkDataType} from "../../../types";
-import {getAllCourse, getCourse} from "../../../services/course/courseService";
+import {getAllLandings, getLanding} from "../../../services/landing/landingProvider";
 
 type Props = {
     course: string,
@@ -128,13 +128,13 @@ const Course = ({course, landingData}: Props) => {
 }
 
 export async function getStaticProps({params}: any) {
-    const landingData: LandingsType = await getCourse({id: params.course})
+    const landingData: LandingsType = await getLanding({id: params.course})
 
     return { props: { course: params.course, landingData} }
 }
 
 export async function getStaticPaths() {
-    const courses = await getAllCourse();
+    const courses = await getAllLandings();
 
     const paths = courses.map((course: LandingsType) => ({
         params: {course: course.id}

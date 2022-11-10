@@ -20,8 +20,8 @@ type Links = {
 export type LandingsType = {
     _id?: any,
     id: string,
-    creationDate: string,
-    modificationDate: string,
+    creationDate: Date,
+    modificationDate: Date,
     description: string,
     achievement: AchievementsSectionType,
     banner: BannerSectionType,

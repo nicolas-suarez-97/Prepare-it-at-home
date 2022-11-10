@@ -1,7 +1,7 @@
 import {connectToDatabase} from "../lib/mongodb";
 const ObjectId = require('mongodb').ObjectId;
 
-async function get(collection, query){
+async function getCollection(collection, query){
     try {
         let { db } = await connectToDatabase();
         let response = await db
@@ -12,6 +12,26 @@ async function get(collection, query){
         return JSON.parse(JSON.stringify(response))
     } catch (error) {
         return error
+    }
+}
+
+async function get(req, res, collection, query){
+    try {
+        let { db } = await connectToDatabase();
+        let posts = await db
+            .collection(collection)
+            .find(query)
+            .sort({ creationDate: -1 })
+            .toArray();
+        return res.json({
+            message: JSON.parse(JSON.stringify(posts)),
+            success: true,
+        });
+    } catch (error) {
+        return res.json({
+            message: new Error(error).message,
+            success: false,
+        });
     }
 }
 
@@ -77,6 +97,7 @@ async function del(req, res, collection) {
 }
 
 export {
+    getCollection,
     get,
     post,
     put,

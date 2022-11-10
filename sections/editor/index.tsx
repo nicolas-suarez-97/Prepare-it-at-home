@@ -1,19 +1,19 @@
-import EditorBannerSection from "./editorBannerSection/editorBannerSection";
-import EditorHookSection from "./editorHookSection/editorHookSection";
 import EditorAchievementsSection from "./editorAchievementsSection/editorAchievementsSection";
-import EditorGallerySection from "./editorGallerySection/editorGallerySection";
+import EditorBannerSection from "./editorBannerSection/editorBannerSection";
 import EditorBenefitsSection from "./editorBenefitsSection/editorBenefitsSection";
-import EditorReviewsSection from "./editorReviewsSection/editorReviewsSection";
 import EditorFaqSection from "./editorFaqSection/editorFaqSection";
+import EditorGallerySection from "./editorGallerySection/editorGallerySection";
 import EditorGetStartedSection from "./editorGetStartedSection/editorGetStartedSection";
+import EditorHookSection from "./editorHookSection/editorHookSection";
+import EditorReviewsSection from "./editorReviewsSection/editorReviewsSection";
 
 export {
-    EditorBannerSection,
-    EditorHookSection,
     EditorAchievementsSection,
-    EditorGallerySection,
+    EditorBannerSection,
     EditorBenefitsSection,
-    EditorReviewsSection,
     EditorFaqSection,
+    EditorGallerySection,
     EditorGetStartedSection,
+    EditorHookSection,
+    EditorReviewsSection,
 }
