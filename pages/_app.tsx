@@ -5,6 +5,7 @@ import * as fbq from "../lib/fbpixel";
 import * as ga from '../lib/ga';
 import React, {useEffect} from "react";
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -41,6 +42,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           `
         }}
     />
+    <Head>
+      <meta name="facebook-domain-verification" content="c7pns0ybtixl43feet5fxorxqs5juj" />
+    </Head>
     <Component {...pageProps} />
   </>
 }
