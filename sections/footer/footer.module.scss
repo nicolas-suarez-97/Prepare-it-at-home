@@ -37,6 +37,35 @@
       transform-origin: bottom left;
     }
   }
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-right: $separation-24;
+    margin-left: $separation-24;
+    align-items: center;
+
+    &--logo {
+      width: 200px !important;
+      border-radius: 0 !important;
+    }
+
+    &--label {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--social {
+      display: flex;
+      justify-content: space-between;
+      width: 140px;
+    }
+
+    & img {
+      border-radius: 100%;
+    }
+  }
 }
 
 .divider {
@@ -55,5 +84,30 @@
     color: $primary-color;
     font-weight: bold;
 
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .footer {
+
+    &__icons {
+      margin-right: $separation-16;
+      margin-left: $separation-16;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .footer {
+    padding: 0;
+
+    &__icons {
+      margin-right: 0;
+      margin-left: 0;
+
+      &--logo {
+        display: none !important;
+      }
+    }
   }
 }

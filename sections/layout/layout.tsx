@@ -19,10 +19,10 @@ const Layout = (props: any) => {
         //{path: "/cursos", label: "Más Cursos"},
     ];
     const footerOptions: any = [
-        //'nosotros',
-        //'contacto',
-        //'terminos',
-        //'faq',
+        // 'nosotros',
+        // 'contacto',
+        // 'terminos',
+        // 'faq',
     ];
 
     return (
