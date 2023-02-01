@@ -3,9 +3,9 @@ import styles from './hero.module.scss';
 
 const Hero = () => {
   return(
-    <>
+    <section>
       Hero
-    </>
+    </section>
   );
 }
 

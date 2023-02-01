@@ -3,9 +3,9 @@ import styles from './categoryCarousel.module.scss';
 
 const CategoryCarousel = () => {
   return(
-    <>
+    <section>
       Category Carousel
-    </>
+    </section>
   );
 }
 

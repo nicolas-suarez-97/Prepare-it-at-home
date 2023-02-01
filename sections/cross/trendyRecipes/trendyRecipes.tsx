@@ -3,9 +3,9 @@ import styles from './trendyRecipes.module.scss';
 
 const TrendyRecipes = () => {
   return(
-    <>
+    <section>
       Trendy Recipes
-    </>
+    </section>
   );
 }
 

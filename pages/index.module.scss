@@ -1,0 +1,11 @@
+@import "styles/globals.module";
+
+.home {
+  padding: 0 $separation-24;
+}
+
+@media (max-width: $mobile-screen) {
+  .home {
+    padding: 0;
+  }
+}
