@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: rgba(245, 245, 245, 0.37);
+  background-color: rgba(245, 245, 245);
   scroll-behavior: smooth;
 }
 

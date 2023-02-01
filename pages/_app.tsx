@@ -44,6 +44,25 @@ function MyApp({ Component, pageProps }: AppProps) {
     />
     <Head>
       <meta name="facebook-domain-verification" content="c7pns0ybtixl43feet5fxorxqs5juj" />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`} />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', '${process.env.GOOGLE_ANALYTICS}', {
+                          page_path: window.location.pathname,
+                        });
+                    `,
+        }}
+      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </Head>
     <Component {...pageProps} />
   </>
