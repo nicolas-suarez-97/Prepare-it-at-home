@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import styles from './header.module.scss';
-import {PageType} from "../../utils/constants";
-import { LogoComponent } from "../../components";
+import {PageType} from "../../../utils/constants";
+import { LogoComponent } from "../../../components";
 
 const Header = ({title, options, placeholder, pageType}: any) => {
 

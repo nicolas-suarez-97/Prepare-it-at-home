@@ -1,11 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import {
-    Header,
-    Footer
-} from "../index";
 import styles from "./layout.module.scss";
 import {PageType} from "../../utils/constants";
+import Header from './header/header'
+import Footer from './footer/footer'
 
 const Layout = (props: any) => {
     const headerOptions = [

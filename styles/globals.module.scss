@@ -52,8 +52,8 @@ $front-shadow-3: linear-gradient(0deg, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.15) 25%
 // Media dimensions
 $mobile-screen: 460px;
 $tablet-screen: 700px;
-$laptop-screen: 800px;
-$fullsize-screen: 1100px;
+$laptop-screen: 1024px;
+$fullsize-screen: 1280px;
 
 .elevation0 {
   box-shadow: none;

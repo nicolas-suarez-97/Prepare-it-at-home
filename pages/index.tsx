@@ -1,8 +1,11 @@
 import type { NextPage } from 'next'
+import { Layout } from '../sections'
 
 const Home: NextPage = () => {
   return (
-      <h1>Home</h1>
+    <Layout>
+      <h1>Test</h1>
+    </Layout>
   )
 }
 

@@ -1,4 +1,4 @@
-@import "../../../styles/globals.module";
+@import "styles/globals.module";
 
 .banner {
   border-radius: $border-radius-2;
@@ -84,8 +84,8 @@
 
   &__background {
     border-radius: $border-radius-2;
-    max-height: 350px;
-    max-width: 350px;
+    max-height: 450px;
+    max-width: 450px;
     height: 45%;
     width: 45%;
     transition: all ease-out 0.3s;

@@ -48,8 +48,6 @@ const Footer = ({footerOptions}: any) => {
                             width={ICONS_SIZE}
                         />
                     </a>
-
-
                 </div>
             </ul>
             <div className={styles.divider}/>
