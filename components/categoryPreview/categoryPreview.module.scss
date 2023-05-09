@@ -1,0 +1,16 @@
+@import "styles/globals.module";
+
+.category {
+  width: 80px;
+  cursor: pointer;
+
+  &__image {
+    border-radius: 100%;
+  }
+
+  &__label {
+    margin: 0;
+    text-align: center;
+    font-size: 14px;
+  }
+}

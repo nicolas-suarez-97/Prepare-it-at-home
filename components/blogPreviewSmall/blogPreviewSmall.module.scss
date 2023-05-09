@@ -1,0 +1,9 @@
+@import "styles/globals.module";
+
+.preview-small {
+  width: 45vw;
+
+  &__image {
+    width: 100px;
+  }
+}

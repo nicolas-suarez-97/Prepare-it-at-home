@@ -1,0 +1,82 @@
+@import "styles/globals.module";
+
+.button {
+  @mixin button() {
+    min-width: 150px;
+    height: 40px;
+    padding: $separation-16;
+    color: white;
+    transition: all ease-out 0.3s;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $separation-8;
+    text-transform: capitalize;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &--primary {
+    @include button;
+    background-color: $primary-color;
+    border: $primary-color 1px solid;
+    border-radius: $border-radius-5;
+
+    &:hover {
+      border: $primary-color 1px solid;
+      background-color: $base-color;
+      color: $primary-color;
+    }
+  }
+
+  &--secondary {
+    @include button;
+    background-color: $base-color;
+    border: $primary-color 1px solid;
+    border-radius: $border-radius-5;
+    color: $primary-color;
+
+    &:hover {
+      border: $primary-color 1px solid;
+      background-color: $secondary-color;
+      font-weight: bold;
+      color: $primary-color;
+    }
+  }
+
+  &--underline {
+    @include button;
+    color: black;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    min-width: 100px;
+    padding: 10px 0 $separation-8;
+    user-select: none;
+
+    &:hover {
+      border: none;
+      color: black;
+      background-color: transparent;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 6px;
+      background-color: $primary-color;
+      transform-origin: bottom right;
+      transition: transform 0.5s ease-out;
+    }
+
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}

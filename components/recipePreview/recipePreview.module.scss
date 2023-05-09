@@ -1,0 +1,26 @@
+@import "styles/globals.module";
+
+.recipe {
+  &__container {
+    cursor: pointer;
+  }
+
+  &__image {
+    border-radius: $border-radius-2;
+  }
+
+  &__title {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__ingredients {
+    font-size: 14px;
+    margin: 0;
+    color: #363636;
+
+    & > span {
+      font-weight: bold;
+    }
+  }
+}

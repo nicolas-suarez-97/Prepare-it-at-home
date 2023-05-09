@@ -1,1 +1,41 @@
 @import "styles/globals.module";
+
+.red {
+  color: $primary-color;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: $separation-24 0;
+
+  &__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+
+  }
+
+  &__button {
+    width: 100px;
+    height: 20px;
+  }
+
+  &__recipes {
+    display: flex;
+    justify-content: space-between;
+    gap: $separation-16;
+  }
+}
+
+
+@media (max-width: $tablet-screen) {
+  .container {
+    padding: 0 $separation-16;
+  }
+}

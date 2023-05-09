@@ -1,1 +1,61 @@
 @import "styles/globals.module";
+
+.hero {
+  display: flex;
+  margin-top: $separation-24;
+
+  &__content {
+    width: 50%;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 36px;
+  }
+
+  &__subtitle {
+    text-align: justify;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: $separation-24;
+  }
+
+  &__image {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    & > img {
+      width: 100%;
+      max-width: 500px;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .hero {
+    flex-direction: column-reverse;
+
+    &__content {
+      width: 90%;
+      margin: auto;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__image {
+      width: 90%;
+      margin: auto;
+    }
+
+    &__buttons {
+      justify-content: center;
+    }
+  }
+  
+}

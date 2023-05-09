@@ -1,1 +1,30 @@
 @import "styles/globals.module";
+
+.categories {
+  margin: $separation-56 0;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__container {
+    overflow: auto;
+  }
+
+  &__items {
+    display: flex;
+    gap: $separation-56;
+    justify-content: center;
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .categories {
+    padding: 0 $separation-16;
+
+    &__items {
+      display: inline-flex;
+      gap: $separation-24;
+    }
+  }
+}
