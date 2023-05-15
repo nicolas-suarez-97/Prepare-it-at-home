@@ -1,9 +1,49 @@
 @import "styles/globals.module";
 
 .preview-big {
-  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: $separation-16;
 
   &__image {
+    position: relative;
     width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: $border-radius-1;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    &-date {
+      margin: 0;
+      color: gray;
+      font-size: 14px;
+    }
+
+    &-title {
+      margin: $separation-8 0;
+      font-size: 18px;
+    }
+
+    &-description {
+      margin: 0;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .preview-big {
+    &__image {
+      height: 250px;
+    }
   }
 }

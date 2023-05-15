@@ -8,24 +8,63 @@ const Home: NextPage = () => {
   const recipes = [
     {
       name: 'Chicken Fajita',
-      ingredients: 'Lorem ipsum dolor sit amet',
+      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
       imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
       imageAlt: '',
-      recipeUrl: '/'
+      path: 'chicken-fajitas',
+      time: '30 min',
+      difficulty: 1,
+      calories: '500 kcl',
     },
     {
       name: 'Chicken Fajita',
-      ingredients: 'Lorem ipsum dolor sit amet',
+      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
       imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
       imageAlt: '',
-      recipeUrl: '/'
+      path: 'chicken-fajitas',
+      time: '30 min',
+      difficulty: 1,
+      calories: '500 kcl',
     },
     {
       name: 'Chicken Fajita',
-      ingredients: 'Lorem ipsum dolor sit amet',
+      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
       imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
       imageAlt: '',
-      recipeUrl: '/'
+      path: 'chicken-fajitas',
+      time: '30 min',
+      difficulty: 1,
+      calories: '500 kcl',
+    },
+    {
+      name: 'Chicken Fajita',
+      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
+      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+      imageAlt: '',
+      path: 'chicken-fajitas',
+      time: '30 min',
+      difficulty: 1,
+      calories: '500 kcl',
+    },
+    {
+      name: 'Chicken Fajita',
+      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
+      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+      imageAlt: '',
+      path: 'chicken-fajitas',
+      time: '30 min',
+      difficulty: 1,
+      calories: '500 kcl',
+    },
+    {
+      name: 'Chicken Fajita',
+      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
+      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+      imageAlt: '',
+      path: 'chicken-fajitas',
+      time: '30 min',
+      difficulty: 1,
+      calories: '500 kcl',
     }
   ]
 
@@ -92,6 +131,12 @@ const Home: NextPage = () => {
       title: '4. Our recipes blog',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
     },
+    {
+      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+      creationDate: 'November 16, 2018',
+      title: '4. Our recipes blog',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
+    },
   ];
 
   return (
@@ -100,8 +145,8 @@ const Home: NextPage = () => {
       <TrendyRecipes recipes={recipes}/>
       <CategoryCarousel categories={categories}/>
       <RecipeBlog blogs={blogs}/>
-      <NewsLetterSubscribe />
-      <FeaturedRecipes />
+      {/*<NewsLetterSubscribe />*/}
+      <FeaturedRecipes recipes={recipes}/>
     </Layout>
   )
 }

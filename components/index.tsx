@@ -8,6 +8,9 @@ import RecipePreview from './recipePreview/recipePreview'
 import CategoryPreview from './categoryPreview/categoryPreview'
 import BlogPreviewBig from './blogPreviewBig/blogPreviewBig'
 import BlogPreviewSmall from './blogPreviewSmall/blogPreviewSmall'
+import RecipeAdditionalInfo from './recipeAditionalInfo/recipeAdditionalInfo'
+import IconComponent from './icon/iconComponent'
+import CoursePreview from './coursePreview/coursePreview'
 
 export {
   ActionButton,
@@ -19,5 +22,8 @@ export {
   RecipePreview,
   CategoryPreview,
   BlogPreviewBig,
-  BlogPreviewSmall
+  BlogPreviewSmall,
+  RecipeAdditionalInfo,
+  IconComponent,
+  CoursePreview,
 }

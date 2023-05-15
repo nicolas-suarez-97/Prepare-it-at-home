@@ -4,7 +4,7 @@
   background-color: $secondary-color;
   margin-right: -$separation-40;
   margin-left: -$separation-40;
-  padding: $separation-16 $separation-40;
+  padding: $separation-32 $separation-40;
 
   &__header {
     display: flex;
@@ -17,11 +17,32 @@
     display: flex;
     justify-content: space-between;
     gap: $separation-16;
+
+    &-big {
+
+    }
+
+    &-small {
+      display: flex;
+      flex-direction: column;
+      gap: $separation-32;
+    }
   }
 }
 
-@media (max-width: $mobile-screen) {
+@media (max-width: $tablet-screen) {
   .recipe {
-    padding: 0 $separation-56;
+    padding: $separation-32;
+    margin-right: -$separation-8;
+    margin-left: -$separation-8;
+
+    &__content {
+      flex-direction: column;
+      gap: $separation-48;
+
+      &-small {
+        width: 100%;
+      }
+    }
   }
 }

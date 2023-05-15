@@ -1,1 +1,32 @@
 @import "styles/globals.module";
+
+.featured {
+  margin: $separation-56 0;
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    justify-content: space-between;
+    gap: $separation-16;
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .featured {
+    margin: $separation-56 0;
+
+    &__title {
+      margin: $separation-16;
+    }
+
+    &__content {
+      padding: 0 $separation-16;
+      grid-template-columns: repeat(3, 200px);
+      gap: $separation-16;
+      height: 500px;
+    }
+  }
+}

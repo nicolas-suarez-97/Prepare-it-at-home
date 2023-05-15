@@ -1,0 +1,36 @@
+@import "styles/globals.module";
+
+.recipes {
+  margin: $separation-32;
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: $separation-32;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: $separation-16;
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .recipes {
+    &___content {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .recipes {
+    margin: 0;
+
+    &__content {
+      justify-content: center;
+    }
+  }
+}

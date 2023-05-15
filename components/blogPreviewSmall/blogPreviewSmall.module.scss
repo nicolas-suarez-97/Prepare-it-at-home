@@ -1,9 +1,44 @@
 @import "styles/globals.module";
 
 .preview-small {
-  width: 45vw;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: $separation-16;
 
   &__image {
-    width: 100px;
+    position: relative;
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: $border-radius-1;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    width: 60%;
+
+    &-date {
+      margin: 0;
+      font-size: 14px;
+      color: gray;
+    }
+
+    &-title {
+      margin: $separation-8 0;
+      font-size: 18px;
+    }
+
+    &-description {
+      margin: 0;
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
   }
 }

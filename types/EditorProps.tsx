@@ -1,9 +1,9 @@
-import {LandingsType} from "./LandingsType";
+import {CourseType} from "./CourseType";
 
 export type EditorProps = {
-    data: LandingsType,
+    data: CourseType,
     setData: Function,
-    original: LandingsType,
+    original: CourseType,
     focus: Function,
     iconSelector?: Function
 }

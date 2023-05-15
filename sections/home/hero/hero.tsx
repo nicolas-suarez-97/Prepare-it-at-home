@@ -2,6 +2,7 @@ import React from 'react'
 import { ButtonLayout } from '../../../types/ButtonType'
 import { Button } from '../../../components'
 import styles from './hero.module.scss';
+import { Routes } from '../../../utils/routes'
 
 const Hero = () => {
   return (
@@ -13,13 +14,13 @@ const Hero = () => {
         </p>
         <div className={styles['hero__buttons']}>
           <Button
-            url={ '/' }
+            url={ Routes.RECIPES }
             label={ 'Explorar Recetas' }
             layout={ ButtonLayout.PRIMARY }
             newPage={ false }
           />
           <Button
-            url={ '/' }
+            url={ Routes.COURSES }
             label={ 'Ver Cursos' }
             layout={ ButtonLayout.UNDERLINE }
             newPage={ false }

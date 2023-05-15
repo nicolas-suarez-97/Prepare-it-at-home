@@ -1,4 +1,4 @@
-import {LandingsType} from "../../types";
+import {CourseType} from "../../types";
 
 const PATH = `/api/landing`;
 
@@ -8,7 +8,7 @@ const getLandingById = async (landingId: string) => {
     return data['message'][0]
 }
 
-const addLanding = async (landingData: LandingsType, router: any) => {
+const addLanding = async (landingData: CourseType, router: any) => {
     if (landingData._id != null || landingData.id === '' || landingData.id === 'new id') {
         alert(':(')
         return
@@ -33,7 +33,7 @@ const addLanding = async (landingData: LandingsType, router: any) => {
     }
 }
 
-const updateLanding = async (landingData: LandingsType, router: any) => {
+const updateLanding = async (landingData: CourseType, router: any) => {
     landingData.modificationDate = new Date();
     try {
         const res = await fetch(PATH,

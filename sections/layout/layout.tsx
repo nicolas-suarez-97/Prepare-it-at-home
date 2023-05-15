@@ -4,17 +4,18 @@ import styles from './layout.module.scss'
 import { PageType } from '../../utils/constants'
 import Header from './header/header'
 import Footer from './footer/footer'
+import { Routes } from '../../utils/routes'
 
 const Layout = (props: any) => {
   const headerOptions = [
-    { path: '/', label: 'Inicio' },
-    { path: '/recetas', label: 'Recetas' },
-    { path: '/cursos', label: 'Cursos' }
+    { path: Routes.HOME, label: 'Inicio' },
+    { path: Routes.RECIPES, label: 'Recetas' },
+    { path: Routes.COURSES, label: 'Cursos' }
   ]
 
   const landingOptions = [
     { path: props.courseUrl, label: 'Ingreso al Curso' }
-    //{path: "/cursos", label: "Más Cursos"},
+//    { path: Routes.COURSES, label: "Más Cursos"},
   ]
   const footerOptions: any = [
     // 'nosotros',

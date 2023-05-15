@@ -1,11 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import {get, post, put, del} from "../../services/mongodb";
-import {LandingsType} from "../../types";
+import {CourseType} from "../../types";
 
 export default function handler(
     req: NextApiRequest,
-    res: NextApiResponse<LandingsType>
+    res: NextApiResponse<CourseType>
 ) {
     const collection = "landing"
     switch (req.method) {

@@ -18,6 +18,7 @@ export const Icons = {
     CHEVRON_LEFT: 'chevron_left',
     CHEVRON_RIGHT: 'chevron_right',
     CLEAR_ALL: 'clear_all',
+    SCHEDULE: 'schedule',
     CLOSE: 'close',
     CLOSE_FULLSCREEN: 'close_fullscreen',
     DELETE: 'delete',

@@ -27,7 +27,8 @@
   }
 
   &__recipes {
-    display: flex;
+    display: inline-flex;
+    overflow: auto;
     justify-content: space-between;
     gap: $separation-16;
   }
@@ -37,5 +38,14 @@
 @media (max-width: $tablet-screen) {
   .container {
     padding: 0 $separation-16;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .container {
+    &__recipes {
+      display: inline-flex;
+      overflow: auto;
+    }
   }
 }

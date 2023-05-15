@@ -7,6 +7,11 @@
 
   &__image {
     border-radius: $border-radius-2;
+    position: relative;
+    width: 350px;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: $separation-16;
   }
 
   &__title {
@@ -21,6 +26,50 @@
 
     & > span {
       font-weight: bold;
+    }
+  }
+}
+
+.card {
+  box-shadow: $card-elevation-1;
+  padding: $separation-16;
+  border-radius: $border-radius-2;
+  width: 100%;
+}
+
+@media (max-width: $tablet-screen) {
+  .recipe {
+    &__image {
+      width: 320px;
+
+    }
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .recipe {
+    &__image {
+      border-radius: $border-radius-2;
+      position: relative;
+      width: 200px;
+      height: 150px;
+      overflow: hidden;
+
+      & > img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .card {
+    box-shadow: $card-elevation-1;
+    padding: $separation-16;
+    border-radius: $border-radius-2;
+    width: 90vw;
+
+    .recipe__image {
+      width: 100%;
+      height: 200px;
     }
   }
 }

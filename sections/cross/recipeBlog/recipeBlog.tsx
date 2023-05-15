@@ -17,11 +17,11 @@ const RecipeBlog = ({blogs}: any) => {
         />
       </div>
       <div className={styles['recipe__content']}>
-        <div>
+        <div className={styles['recipe__content-big']}>
           <BlogPreviewBig blog={blogs[0]}/>
         </div>
-        <div>
-          {blogs.map((b: any, index: number) => index !== 0 && (
+        <div className={styles['recipe__content-small']}>
+          {blogs.map((b: any, index: number) => index !== 0 && index < 4 && (
             <BlogPreviewSmall blog={b} key={index}/>
           ))}
         </div>

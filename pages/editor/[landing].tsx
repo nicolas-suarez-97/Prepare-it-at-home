@@ -7,8 +7,8 @@ import {
     EditorGallerySection, EditorGetStartedSection,
     EditorHookSection, EditorReviewsSection
 } from "../../sections/editor";
-import {LandingsType} from "../../types";
-import {getAllLandings, getLanding} from "../../services/landing/landingProvider";
+import {CourseType} from "../../types";
+import {getAllCourses, getCourse} from "../../services/landing/courseProvider";
 import {addLanding, updateLanding, deleteLanding} from "../../services/landing/landingService";
 import {useRouter} from "next/router";
 import EditorProducerSection from "../../sections/editor/editorProducerSection/editorProducerSection";
@@ -16,7 +16,7 @@ import EditorModulesSection from "../../sections/editor/editorModulesSection/edi
 import {IconSelector} from "../../components";
 
 type Props = {
-    landingData: LandingsType
+    landingData: CourseType
 }
 
 const Landing = ({landingData}: Props) => {
@@ -150,7 +150,7 @@ const Landing = ({landingData}: Props) => {
                 <div className={`${style.landing} ${showLanding ? style.show : style.hide}`}>
                     <Course
                         course="landing"
-                        landingData={data}
+                        courseData={data}
                     />
                 </div>
                 <button
@@ -170,21 +170,21 @@ const Landing = ({landingData}: Props) => {
 
 export async function getStaticProps({params}: any) {
     if (params.landing === 'new') {
-        const landingData: LandingsType = await getLanding({id: 'landing'})
+        const landingData: CourseType = await getCourse({id: 'landing'})
         landingData._id = null;
         landingData.id = 'new id'
 
         return {props: {landingData}}
     }
 
-    const landingData: LandingsType = await getLanding({id: params.landing})
+    const landingData: CourseType = await getCourse({id: params.landing})
     return {props: {landingData}}
 }
 
 export async function getStaticPaths() {
-    const landings = await getAllLandings();
+    const landings = await getAllCourses();
 
-    const paths = landings.map((landing: LandingsType) => ({
+    const paths = landings.map((landing: CourseType) => ({
         params: {landing: landing.id}
     }))
     paths.push({

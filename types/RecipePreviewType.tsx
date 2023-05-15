@@ -1,7 +1,10 @@
 export interface RecipePreviewType {
   name: string
-  ingredients: string
+  ingredients: string[]
   imageUrl: string
   imageAlt: string
-  recipeUrl: string
+  path: string
+  time: string
+  difficulty: number
+  calories: string
 }

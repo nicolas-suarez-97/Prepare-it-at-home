@@ -7,7 +7,8 @@ const nextConfig = {
             'media.istockphoto.com',
             'cdn.pixabay.com',
             'png.pngtree.com',
-            'cdn.discordapp.com'
+            'cdn.discordapp.com',
+            'static.vecteezy.com'
         ]
     }
 }

@@ -1,0 +1,38 @@
+@import "styles/globals.module";
+
+.course-preview {
+  box-shadow: $card-elevation-1;
+  padding: $separation-16;
+  border-radius: $border-radius-2;
+  width: 350px;
+
+  &__image {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    border-radius: $border-radius-2;
+    overflow: hidden;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  &__date {
+    color: gray;
+    font-size: 14px;
+  }
+
+  &__description {
+    font-size: 16px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}

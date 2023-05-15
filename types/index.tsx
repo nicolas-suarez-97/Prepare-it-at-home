@@ -1,4 +1,4 @@
-import { LandingsType } from './LandingsType'
+import { CourseType } from './CourseType'
 import { LinkDataType } from './LinkDataType'
 import { VideoType } from './VideoType'
 import { EditorProps } from './EditorProps'
@@ -8,7 +8,7 @@ import { CategoryPreviewType } from './CategoryPreviewType'
 
 export type {
   EditorProps,
-  LandingsType,
+  CourseType,
   LinkDataType,
   VideoType,
   ButtonType,

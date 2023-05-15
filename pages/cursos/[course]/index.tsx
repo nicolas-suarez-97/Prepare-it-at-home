@@ -14,15 +14,15 @@ import {
     ReviewsSection,
     TopBannerSection,
 } from "../../../sections/landings";
-import {LandingsType, LinkDataType} from "../../../types";
-import {getAllLandings, getLanding} from "../../../services/landing/landingProvider";
+import {CourseType, LinkDataType} from "../../../types";
+import {getAllCourses, getCourse} from "../../../services/landing/courseProvider";
 
 type Props = {
     course: string,
-    landingData: LandingsType,
+    courseData: CourseType,
 }
 
-const Course = ({course, landingData}: Props) => {
+const Course = ({course, courseData}: Props) => {
     const {
         achievement,
         banner,
@@ -41,7 +41,7 @@ const Course = ({course, landingData}: Props) => {
         reviews,
         value,
         videoUrl,
-    } = landingData;
+    } = courseData;
 
     const [isModalOpen, setIsModalOpen] = useState(false)
     useEffect(() => {
@@ -128,15 +128,15 @@ const Course = ({course, landingData}: Props) => {
 }
 
 export async function getStaticProps({params}: any) {
-    const landingData: LandingsType = await getLanding({id: params.course})
+    const courseData: CourseType = await getCourse({id: params.course})
 
-    return { props: { course: params.course, landingData} }
+    return { props: { course: params.course, courseData} }
 }
 
 export async function getStaticPaths() {
-    const courses = await getAllLandings();
+    const courses = await getAllCourses();
 
-    const paths = courses.map((course: LandingsType) => ({
+    const paths = courses.map((course: CourseType) => ({
         params: {course: course.id}
     }))
 
