@@ -5,7 +5,11 @@ import { CoursePreview } from '../../components'
 import { CourseType } from '../../types'
 import { getAllCourses } from '../../services/landing/courseProvider'
 
-const Courses = ({courses}: any) => {
+interface Props {
+  courses: CourseType[]
+}
+
+const Courses = ({courses}: Props) => {
 
   return (
     <Layout>
