@@ -1,5 +1,6 @@
 export const Routes = {
   HOME: '/',
   RECIPES: '/recetas',
-  COURSES: '/cursos'
+  COURSES: '/cursos',
+  BLOG: '/blog'
 };

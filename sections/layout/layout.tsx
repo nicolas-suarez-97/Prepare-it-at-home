@@ -9,8 +9,9 @@ import { Routes } from '../../utils/routes'
 const Layout = (props: any) => {
   const headerOptions = [
     { path: Routes.HOME, label: 'Inicio' },
+    { path: Routes.BLOG, label: 'Blog' },
+    { path: Routes.COURSES, label: 'Cursos' },
     { path: Routes.RECIPES, label: 'Recetas' },
-    { path: Routes.COURSES, label: 'Cursos' }
   ]
 
   const landingOptions = [
