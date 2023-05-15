@@ -1,0 +1,29 @@
+@import "styles/globals.module";
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: $separation-56;
+
+  &__error {
+    font-size: 50px;
+    margin-bottom: 0;
+  }
+
+  &__image {
+    position: relative;
+    width: 50%;
+    height: 40vh;
+  }
+
+  &__title {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  
+}
