@@ -14,9 +14,8 @@ export interface RecipePreviewType {
   name: string
   path: string
   quantity?: number
-  relatedCourses?: []
-  relatedRecipes?: []
   steps?: Steps[]
+  subcategories?: []
   time: string
 }
 
