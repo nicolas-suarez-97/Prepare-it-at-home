@@ -12,7 +12,7 @@ interface Props {
 const RecipeAdditionalInfo = (additionalInfo: Props) => {
   const { time, difficulty, calories } = additionalInfo;
 
-  const getDifficultyLabel = (difficulty) => {
+  const getDifficultyLabel = (difficulty: number) => {
     switch (difficulty) {
       case 1:
         return 'Sencillo';
