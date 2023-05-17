@@ -11,6 +11,8 @@ import BlogPreviewSmall from './blogPreviewSmall/blogPreviewSmall'
 import RecipeAdditionalInfo from './recipeAditionalInfo/recipeAdditionalInfo'
 import IconComponent from './icon/iconComponent'
 import CoursePreview from './coursePreview/coursePreview'
+import Separator from './separator/separator'
+import TitleComponent from './titleComponent/titleComponent'
 
 export {
   ActionButton,
@@ -26,4 +28,6 @@ export {
   RecipeAdditionalInfo,
   IconComponent,
   CoursePreview,
+  Separator,
+  TitleComponent,
 }

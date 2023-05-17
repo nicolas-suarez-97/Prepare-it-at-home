@@ -1,0 +1,23 @@
+@import "styles/globals.module";
+
+.title {
+  text-transform: uppercase;
+  font-size: 40px;
+  margin: 0 0 $separation-32;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto $separation-32;
+}
+
+@media (max-width: $tablet-screen) {
+  .title {
+    text-align: center;
+    margin: 0 auto $separation-32;
+  }
+}

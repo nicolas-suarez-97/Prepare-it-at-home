@@ -11,6 +11,20 @@ interface Props {
 
 const RecipeAdditionalInfo = (additionalInfo: Props) => {
   const { time, difficulty, calories } = additionalInfo;
+
+  const getDifficultyLabel = (difficulty) => {
+    switch (difficulty) {
+      case 1:
+        return 'Sencillo';
+      case 2:
+        return 'Medio';
+      case 3:
+        return 'Difícil';
+      default:
+        return '';
+    }
+  }
+
   return (
     <section className={styles['additional-info']}>
       <div className={styles['additional-info__time']}>
@@ -19,7 +33,7 @@ const RecipeAdditionalInfo = (additionalInfo: Props) => {
       </div>
       <div className={styles['additional-info__difficulty']}>
         <IconComponent name={Icons.STAR} className={styles['additional-info__difficulty-icon']} />
-        <p>{difficulty}</p>
+        <p>{getDifficultyLabel(difficulty)}</p>
       </div>
       <div className={styles['additional-info__calories']}>
         <IconComponent name={Icons.BOLT} className={styles['additional-info__calories-icon']} />

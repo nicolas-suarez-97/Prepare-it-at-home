@@ -1,7 +1,7 @@
 import React from 'react'
 import { Layout } from '../../sections'
 import styles from './recipes.module.scss'
-import { RecipePreview } from '../../components'
+import { RecipePreview, Separator, TitleComponent } from '../../components'
 
 const Recipes = () => {
   const recipes = [
@@ -69,7 +69,8 @@ const Recipes = () => {
   return (
     <Layout>
       <section className={ styles['recipes'] }>
-        <h1 className={ styles['recipes__title'] }>Recetas de Cocina</h1>
+        <TitleComponent title='Recetas de Cocina' align={'center'} />
+        <Separator alignment={'center'}/>
         <div className={ styles['recipes__content'] }>
           { recipes.map((recipe, index) => (
             <RecipePreview recipe={ recipe } hasAdditionalInfo isCard key={ index }/>

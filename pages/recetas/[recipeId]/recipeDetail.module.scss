@@ -17,6 +17,7 @@
     margin-left: -60px;
     border-radius: $border-radius-2;
     overflow: hidden;
+    transition: ease all 0.5s;
 
     & > img {
       object-fit: cover;
@@ -36,13 +37,6 @@
     text-align: justify;
   }
 
-  &__separator {
-    height: 4px;
-    width: $separation-62;
-    background-color: $primary-color;
-    margin: $separation-32 0;
-  }
-
   &__info {
     display: flex;
     justify-content: space-between;
@@ -56,7 +50,7 @@
   &__additional-info {
     max-width: 600px;
     width: 50%;
-    margin: $separation-56 auto $separation-32;
+    margin: $separation-56 auto $separation-16;
     border-radius: $border-radius-2;
     display: flex;
     align-items: center;
@@ -65,12 +59,12 @@
 
   &__preparation {
     display: flex;
-    align-items: flex-start;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
   &__ingredients {
-    width: 50%;
+    width: 45%;
     padding: $separation-16 $separation-16;
     border-radius: $border-radius-2;
 
@@ -78,10 +72,10 @@
     }
 
     &-items {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      justify-content: center;
+      display: flex;
+      flex-direction: column;
       text-transform: capitalize;
+      gap: $separation-8 0;
 
       input {
         accent-color: $primary-color;
@@ -91,6 +85,36 @@
 
   &__steps {
     padding: $separation-16;
+
+    &-item {
+      text-align: justify;
+      display: flex;
+      gap: $separation-32;
+
+      & p {
+        width: 60%;
+        margin: 0;
+      }
+
+      & span {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      &-image {
+        margin: 0 auto $separation-40;
+        position: relative;
+        height: 30vw;
+        max-height: 400px;
+        width: 40%;
+        overflow: hidden;
+        border-radius: $border-radius-2;
+
+        & > img {
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
 
@@ -102,10 +126,6 @@
 
     &__title {
       text-align: center;
-    }
-
-    &__separator {
-      margin: $separation-32 auto;
     }
 
     &__image {
@@ -128,10 +148,26 @@
       &-title {
         text-align: center;
       }
+
+      &-items {
+        gap: $separation-16 0;
+      }
     }
 
     &__steps {
       text-align: center;
+
+      &-item {
+        flex-direction: column;
+
+        & p {
+          width: 100%;
+        }
+        &-image {
+          width: 100%;
+          height: 50vw;
+        }
+      }
     }
   }
 }

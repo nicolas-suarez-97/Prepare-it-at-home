@@ -3,26 +3,47 @@ import { Layout } from '../../../sections'
 import { RecipePreviewType } from '../../../types'
 import Image from 'next/image'
 import styles from './recipeDetail.module.scss'
-import { RecipeAdditionalInfo } from '../../../components'
+import { RecipeAdditionalInfo, Separator, TitleComponent } from '../../../components'
 
 const RecipeDetail = () => {
   const recipe: RecipePreviewType = {
     author: 'Francisco',
     calories: '500 kcl',
     categories: [ 'mexicano' ],
-    cookware: [ 'cuchara' ],
+    cookware: [ 'cuchara', 'horno', 'arrocera' ],
     creationDate: new Date(),
-    dateTime: '',
+    dateTime: 'Almuerzo',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     difficulty: 1,
     imageAlt: '',
     imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-    ingredients: [ '4 trozos de bacalao desalado', 'ipsum', 'dolor', 'sit', 'amet' ],
+    ingredients: [ '4 trozos de bacalao desalado', '1 cebolla', '2 dientes de ajos', '1 kilo de tomates maduros o tomate triturado o tamizado', 'aceite', 'pimienta', 'sal' ],
     modificationsDate: new Date(),
     name: 'Chicken Fajita',
     path: 'chicken-fajitas',
     quantity: 3,
-    steps: [],
+    steps: [
+      {
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+        imageAlt: '',
+      },
+      {
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+        imageAlt: '',
+      },
+      {
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+        imageAlt: '',
+      },
+      {
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
+        imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
+        imageAlt: '',
+      },
+    ],
     subcategories: [],
     time: '30 min'
   }
@@ -34,8 +55,8 @@ const RecipeDetail = () => {
             <Image src={ recipe.imageUrl } alt={ recipe.imageAlt } fill/>
           </div>
           <div className={ styles['recipe__content'] }>
-            <h1 className={ styles['recipe__title'] }>{ recipe.name }</h1>
-            <div className={ styles['recipe__separator'] }/>
+            <TitleComponent title={recipe.name} />
+            <Separator />
             <p className={ styles['recipe__description'] }>{ recipe.description }</p>
             <div className={ styles['recipe__info'] }>
               <div>
@@ -59,9 +80,9 @@ const RecipeDetail = () => {
         <div className={ styles['recipe__preparation'] }>
           <div className={ styles['recipe__ingredients'] }>
             <h2 className={ styles['recipe__ingredients-title'] }>Ingredientes</h2>
-            <div className={ styles['recipe__separator'] }/>
+            <Separator />
             <div className={ styles['recipe__ingredients-items'] }>
-              { recipe.ingredients.map((i, index) => (
+              { recipe.ingredients.map((i) => (
                 <div key={ i }>
                   <input type="checkbox" name={ i } id={ i }/>
                   <label htmlFor={ i }>{ i }</label>
@@ -71,9 +92,9 @@ const RecipeDetail = () => {
           </div>
           <div className={ styles['recipe__ingredients'] }>
             <h2 className={ styles['recipe__ingredients-title'] }>Utensilios</h2>
-            <div className={ styles['recipe__separator'] }/>
+            <Separator />
             <div className={ styles['recipe__ingredients-items'] }>
-              { recipe.cookware?.map((c, index) => (
+              { recipe.cookware?.map((c) => (
                 <div key={ c }>
                   <input type="checkbox" name={ c } id={ c }/>
                   <label htmlFor={ c }>{ c }</label>
@@ -84,7 +105,17 @@ const RecipeDetail = () => {
         </div>
         <div className={styles['recipe__steps']}>
           <h2>Paso a paso</h2>
-          <div className={ styles['recipe__separator'] }/>
+          <Separator />
+          <div className={ styles['recipe__steps-content'] }>
+            {recipe.steps?.map((step, index) => (
+              <div key={index} className={ styles['recipe__steps-item'] }>
+                <p dangerouslySetInnerHTML={{__html: `<span>${index + 1}. </span>${step.description}`}} />
+                <div className={ styles['recipe__steps-item-image'] }>
+                  <Image src={step.imageUrl} alt={step.imageAlt} fill/>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>
@@ -103,6 +134,5 @@ export async function getStaticPaths() {
     } ], fallback: false
   }
 }
-
 
 export default RecipeDetail
