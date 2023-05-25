@@ -13,6 +13,7 @@ import IconComponent from './icon/iconComponent'
 import CoursePreview from './coursePreview/coursePreview'
 import Separator from './separator/separator'
 import TitleComponent from './titleComponent/titleComponent'
+import SearchBarComponent from './searchBarComponent/searchBarComponent'
 
 export {
   ActionButton,
@@ -30,4 +31,5 @@ export {
   CoursePreview,
   Separator,
   TitleComponent,
+  SearchBarComponent,
 }

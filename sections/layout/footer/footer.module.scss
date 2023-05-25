@@ -101,6 +101,10 @@
   .footer {
     padding: 0;
 
+    &__options {
+      flex-direction: column;
+    }
+
     &__icons {
       margin-right: 0;
       margin-left: 0;

@@ -1,0 +1,34 @@
+@import "styles/globals.module";
+
+.search-bar {
+  min-width: 200px;
+  display: flex;
+  align-content: center;
+  border-radius: $border-radius-2;
+  padding: 4px $separation-8;
+  background-color: $base-color;
+  box-shadow: $card-elevation-1;
+
+  & > span {
+    color: #646464;
+  }
+
+  & > input {
+    margin-left: $separation-8;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+
+    }
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .search-bar {
+    width: 100%;
+  }
+}

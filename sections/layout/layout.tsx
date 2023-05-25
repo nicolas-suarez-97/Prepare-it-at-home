@@ -15,14 +15,14 @@ const Layout = (props: any) => {
   ]
 
   const landingOptions = [
-    { path: props.courseUrl, label: 'Ingreso al Curso' }
+    { path: props.courseUrl, label: 'Ingreso al Curso' },
 //    { path: Routes.COURSES, label: "Más Cursos"},
   ]
   const footerOptions: any = [
-    // 'nosotros',
-    // 'contacto',
-    // 'terminos',
-    // 'faq',
+    { path: Routes.ABOUT_US, label: 'Nosotros' },
+//    { path: Routes.CONTACT, label: 'Contacto' },
+    { path: Routes.TERMS_AND_CONDITIONS, label: 'Terminos y Condiciones' },
+    { path: Routes.FAQ, label: 'Faq' },
   ]
 
   return (
@@ -40,6 +40,7 @@ const Layout = (props: any) => {
       </div>
       <Footer
         footerOptions={ footerOptions }
+        pageType={ props.pageType }
       />
     </div>
   )
