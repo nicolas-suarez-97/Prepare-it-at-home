@@ -14,6 +14,8 @@ import CoursePreview from './coursePreview/coursePreview'
 import Separator from './separator/separator'
 import TitleComponent from './titleComponent/titleComponent'
 import SearchBarComponent from './searchBarComponent/searchBarComponent'
+import AuthorThumbnail from './authorThumbnail/authorThumbnail'
+import PillComponent from './pillComponent/pillComponent'
 
 export {
   ActionButton,
@@ -32,4 +34,6 @@ export {
   Separator,
   TitleComponent,
   SearchBarComponent,
+  AuthorThumbnail,
+  PillComponent,
 }

@@ -1,0 +1,36 @@
+@import "styles/globals.module";
+
+.blog {
+  padding: $separation-32;
+
+  &__hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__date {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+  }
+
+  &__title {
+    margin: 0 0 $separation-16;
+    font-size: 40px;
+  }
+
+  &__main-image {
+    position: relative;
+    height: 50vw;
+    max-height: 500px;
+    width: 50%;
+    border-radius: $border-radius-2;
+    overflow: hidden;
+    margin-right: -60px;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "styles/globals.module";
+
+.pill {
+  border: solid 1px $primary-color;
+  border-radius: $border-radius-5;
+  padding: 2px $separation-8;
+  font-size: 12px;
+  display: inline;
+
+  &__fill {
+    &-primary {
+      background-color: $primary-color;
+      color: white;
+    }
+
+    &-secondary {
+      border-color: $primary-color;
+      background-color: $secondary-color;
+      color: black;
+    }
+  }
+}

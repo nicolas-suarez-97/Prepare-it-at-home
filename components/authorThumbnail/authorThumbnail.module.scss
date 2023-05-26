@@ -1,0 +1,23 @@
+@import "styles/globals.module";
+
+.author-thumbnail {
+  display: flex;
+  align-items: center;
+  gap: $separation-8;
+
+  &__image {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    overflow: hidden;
+
+    & > img {
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    text-transform: capitalize;
+  }
+}
