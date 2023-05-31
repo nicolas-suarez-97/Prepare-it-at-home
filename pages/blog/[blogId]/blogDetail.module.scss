@@ -2,6 +2,8 @@
 
 .blog {
   padding: $separation-32;
+  max-width: 800px;
+  margin: 0 auto;
 
   &__hero {
     display: flex;
@@ -15,22 +17,46 @@
     color: gray;
   }
 
-  &__title {
-    margin: 0 0 $separation-16;
-    font-size: 40px;
-  }
-
   &__main-image {
     position: relative;
     height: 50vw;
-    max-height: 500px;
-    width: 50%;
+    max-height: 300px;
+    width: 50vw;
+    max-width: 300px;
     border-radius: $border-radius-2;
     overflow: hidden;
-    margin-right: -60px;
 
     & > img {
       object-fit: cover;
+    }
+  }
+
+  &__content {
+    text-align: justify;
+    margin: $separation-32 auto;
+  }
+}
+
+@media (max-width: $tablet-screen) {
+  .blog {
+    padding: $separation-16;
+    max-width: 500px;
+
+    &__hero {
+      display: flex;
+      flex-direction: column;
+      gap: $separation-32;
+
+      &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &__main-image {
+      width: 100%;
+      max-width: 600px;
     }
   }
 }
