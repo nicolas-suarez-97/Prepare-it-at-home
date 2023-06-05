@@ -3,71 +3,10 @@ import { Layout } from '../sections'
 import { Hero } from '../sections/home'
 import { CategoryCarousel, FeaturedRecipes, NewsLetterSubscribe, RecipeBlog, TrendyRecipes } from '../sections/cross'
 import styles from './index.module.scss';
+import { getAllRecipes } from '../services/recipes/recipesServices'
+import { getAllBlogs } from '../services/blog/blogService'
 
-const Home: NextPage = () => {
-  const recipes = [
-    {
-      name: 'Chicken Fajita',
-      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet'],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    }
-  ]
-
+const Home: NextPage = ({ recipes, blogs }: any) => {
   const categories = [
     {
       label: 'Appetizers',
@@ -106,54 +45,23 @@ const Home: NextPage = () => {
     },
   ]
 
-  const blogs = [
-    {
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      creationDate: 'November 16, 2018',
-      title: 'Our recipes blog',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-      path: 'our-recipes-blog',
-    },
-    {
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      creationDate: 'November 16, 2018',
-      title: 'Our recipes blog',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-      path: 'our-recipes-blog',
-    },
-    {
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      creationDate: 'November 16, 2018',
-      title: 'Our recipes blog',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-      path: 'our-recipes-blog',
-    },
-    {
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      creationDate: 'November 16, 2018',
-      title: 'Our recipes blog',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-      path: 'our-recipes-blog',
-    },
-    {
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      creationDate: 'November 16, 2018',
-      title: 'Our recipes blog',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-      path: 'our-recipes-blog',
-    },
-  ];
-
   return (
     <Layout layoutStyle={styles.home}>
       <Hero />
       <TrendyRecipes recipes={recipes}/>
-      <CategoryCarousel categories={categories}/>
+      {/*<CategoryCarousel categories={categories}/>*/}
       <RecipeBlog blogs={blogs}/>
       {/*<NewsLetterSubscribe />*/}
       <FeaturedRecipes recipes={recipes}/>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const recipes = await getAllRecipes()
+  const blogs = await getAllBlogs()
+
+  return { props: { recipes, blogs } }
 }
 
 export default Home

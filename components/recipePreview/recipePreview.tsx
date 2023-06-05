@@ -13,9 +13,9 @@ interface Props {
 }
 
 const RecipePreview = ({recipe, hasAdditionalInfo = false, isCard = false}: Props) => {
-  const { path, imageUrl, imageAlt, name, ingredients, time, difficulty, calories} = recipe
+  const { id, imageUrl, imageAlt, name, ingredients, time, difficulty, calories} = recipe
   return (
-    <Link href={ `${Routes.RECIPES}/${path}` } className={ styles['recipe'] }>
+    <Link href={ `${Routes.RECIPES}/${id}` } className={ styles['recipe'] }>
       <div className={ `${styles['recipe__container']} ${isCard && styles['card']}` }>
         <div className={ styles['recipe__image'] }>
           <Image

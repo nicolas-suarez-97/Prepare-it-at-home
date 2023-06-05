@@ -38,7 +38,7 @@ async function get(req, res, collection, query){
 async function post(req, res, collection) {
     try {
         let { db } = await connectToDatabase();
-        await db.collection(collection).insertOne(JSON.parse(req.body));
+        await db.collection(collection).insertOne(req.body);
         return res.json({
             message: 'Added successfully',
             success: true,
@@ -52,7 +52,7 @@ async function post(req, res, collection) {
 }
 
 async function put(req, res, collection) {
-    req.body = JSON.parse(req.body)
+//    req.body = JSON.parse(req.body)
     req.body._id = new ObjectId(req.body._id);
 
     try {
@@ -81,7 +81,7 @@ async function del(req, res, collection) {
         let { db } = await connectToDatabase();
 
         await db.collection(collection).deleteOne({
-            _id: new ObjectId(req.body),
+            _id: new ObjectId(req.body._id),
         });
 
         return res.json({

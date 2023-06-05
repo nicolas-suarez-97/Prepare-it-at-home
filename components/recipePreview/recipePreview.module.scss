@@ -23,6 +23,12 @@
     font-size: 14px;
     margin: 0;
     color: #363636;
+    max-width: 350px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-align: justify;
 
     & > span {
       font-weight: bold;
@@ -58,6 +64,10 @@
       & > img {
         object-fit: cover;
       }
+    }
+
+    &__ingredients {
+      max-width: 100%;
     }
   }
 

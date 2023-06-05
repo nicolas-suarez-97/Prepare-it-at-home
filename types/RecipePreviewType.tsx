@@ -12,7 +12,7 @@ export interface RecipePreviewType {
   ingredients: string[]
   modificationsDate?: Date
   name: string
-  path: string
+  id: string
   quantity?: number
   steps?: Steps[]
   subcategories?: []

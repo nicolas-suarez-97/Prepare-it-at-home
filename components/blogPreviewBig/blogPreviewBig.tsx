@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { Routes } from '../../utils/routes'
 
 const BlogPreviewBig = ({blog}: any) => {
-  const { path, creationDate, title, description, imageUrl } = blog;
+  const { id, creationDate, title, description, imageUrl } = blog;
 
   return (
-    <Link href={`${Routes.BLOG}/${path}`} className={styles['preview-big']}>
+    <Link href={`${Routes.BLOG}/${id}`} className={styles['preview-big']}>
       <div className={styles['preview-big__image']} >
         <Image src={imageUrl} alt="" fill/>
       </div>

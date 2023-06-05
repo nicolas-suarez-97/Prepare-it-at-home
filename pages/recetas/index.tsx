@@ -2,83 +2,28 @@ import React from 'react'
 import { Layout } from '../../sections'
 import styles from './recipes.module.scss'
 import { RecipePreview, Separator, TitleComponent } from '../../components'
+import { getAllRecipes } from '../../services/recipes/recipesServices'
 
-const Recipes = () => {
-  const recipes = [
-    {
-      name: 'Chicken Fajita',
-      ingredients: [ 'Lorem', 'ipsum', 'dolor', 'sit', 'amet' ],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: [ 'Lorem', 'ipsum', 'dolor', 'sit', 'amet' ],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: [ 'Lorem', 'ipsum', 'dolor', 'sit', 'amet' ],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: [ 'Lorem', 'ipsum', 'dolor', 'sit', 'amet' ],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: [ 'Lorem', 'ipsum', 'dolor', 'sit', 'amet' ],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    },
-    {
-      name: 'Chicken Fajita',
-      ingredients: [ 'Lorem', 'ipsum', 'dolor', 'sit', 'amet' ],
-      imageUrl: 'https://cdn.discordapp.com/attachments/1008571037862080542/1089750815582994463/Nicolas_Suarez_plato_elegante_con_receta_de_alitas_y_una_salsa__78f0b7e1-84b0-4992-8600-19762025121f.png',
-      imageAlt: '',
-      path: 'chicken-fajitas',
-      time: '30 min',
-      difficulty: 1,
-      calories: '500 kcl',
-    }
-  ]
+const Recipes = ({ recipes }: any) => {
   return (
     <Layout>
       <section className={ styles['recipes'] }>
         <TitleComponent title='Recetas de Cocina' align={'center'} />
         <Separator alignment={'center'}/>
         <div className={ styles['recipes__content'] }>
-          { recipes.map((recipe, index) => (
+          { recipes.map((recipe: any, index: number) => (
             <RecipePreview recipe={ recipe } hasAdditionalInfo isCard key={ index }/>
           )) }
         </div>
       </section>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const recipes = await getAllRecipes()
+
+  return { props: { recipes } }
 }
 
 export default Recipes
