@@ -2,10 +2,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { apiMethods } from '../../services/utils/apiUtils'
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const collection = "recipe"
+
   return apiMethods(req, res, collection);
 }
