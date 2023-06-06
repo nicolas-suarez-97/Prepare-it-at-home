@@ -5,6 +5,7 @@ import { PageType } from '../../utils/constants'
 import Header from './header/header'
 import Footer from './footer/footer'
 import { Routes } from '../../utils/routes'
+import Metadata from './metadata/metadata'
 
 const Layout = (props: any) => {
   const headerOptions = [
@@ -28,6 +29,12 @@ const Layout = (props: any) => {
   return (
     <div className={ styles.container }>
       <div>
+        <Metadata
+          title={props.title}
+          description={props.description}
+          ogImage={props.ogImage}
+          ogType={props.ogType}
+        />
         <Header
           title="Preparalo en Casa"
           options={ props.pageType === PageType.LANDING ? landingOptions : headerOptions }

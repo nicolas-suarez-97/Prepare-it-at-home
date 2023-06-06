@@ -16,6 +16,7 @@ import {
 } from "../../../sections/landings";
 import {CourseType, LinkDataType} from "../../../types";
 import {getAllCourses, getCourse} from "../../../services/landing/courseProvider";
+import { Constants } from '../../../utils/constants'
 
 type Props = {
     course: string,
@@ -65,6 +66,9 @@ const Course = ({course, courseData}: Props) => {
             <Layout
                 pageType={pageType}
                 courseUrl={courseUrl}
+                title={banner.title}
+                description={courseData.description}
+                ogImage={banner.backgroundImage}
             >
                 <TopBannerSection
                     banner={banner}
@@ -130,7 +134,7 @@ const Course = ({course, courseData}: Props) => {
 export async function getStaticProps({params}: any) {
     const courseData: CourseType = await getCourse({id: params.course})
 
-    return { props: { course: params.course, courseData} }
+    return { props: { course: params.course, courseData}, revalidate: Constants.TIME_REGENERATION_DAY }
 }
 
 export async function getStaticPaths() {

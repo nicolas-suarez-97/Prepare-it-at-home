@@ -5,10 +5,15 @@ import Image from 'next/image'
 import styles from './recipeDetail.module.scss'
 import { RecipeAdditionalInfo, Separator, TitleComponent } from '../../../components'
 import { getAllRecipes, getRecipe } from '../../../services/recipes/recipesServices'
+import { Constants } from '../../../utils/constants'
 
 const RecipeDetail = ({ recipe }: any) => {
   return (
-    <Layout>
+    <Layout
+      title={recipe.name}
+      description={recipe.description}
+      ogImage={recipe.imageUrl}
+    >
       <section className={ styles['recipe'] }>
         <div className={ styles['recipe__header'] }>
           <div className={ styles['recipe__image'] }>
@@ -85,7 +90,7 @@ const RecipeDetail = ({ recipe }: any) => {
 export async function getStaticProps({ params }: any) {
   const recipe = await getRecipe({id: params.recipeId})
 
-  return { props: { recipe } }
+  return { props: { recipe }, revalidate: Constants.TIME_REGENERATION_DAY }
 }
 
 export async function getStaticPaths() {

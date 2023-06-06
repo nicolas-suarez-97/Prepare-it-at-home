@@ -19,8 +19,13 @@ const LandingIds = {
     REVIEWS_SECTION: 'reviews_section',
 }
 
+const Constants = {
+    URL: 'https://preparalo-en-casa.vercel.app',
+    TIME_REGENERATION_DAY: 86400,
+}
 
 export {
     PageType,
-    LandingIds
+    LandingIds,
+    Constants,
 }

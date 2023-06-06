@@ -5,6 +5,7 @@ import { CategoryCarousel, FeaturedRecipes, NewsLetterSubscribe, RecipeBlog, Tre
 import styles from './index.module.scss';
 import { getAllRecipes } from '../services/recipes/recipesServices'
 import { getAllBlogs } from '../services/blog/blogService'
+import { Constants } from '../utils/constants'
 
 const Home: NextPage = ({ recipes, blogs }: any) => {
   const categories = [
@@ -61,7 +62,7 @@ export async function getStaticProps() {
   const recipes = await getAllRecipes()
   const blogs = await getAllBlogs()
 
-  return { props: { recipes, blogs } }
+  return { props: { recipes, blogs }, revalidate: Constants.TIME_REGENERATION_DAY }
 }
 
 export default Home

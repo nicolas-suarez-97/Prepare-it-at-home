@@ -8,7 +8,7 @@ const Footer = ({ footerOptions, pageType }: any) => {
   const ICONS_SIZE = 40
 
   return (
-    <section className={ styles.footer }>
+    <footer className={ styles.footer }>
       <ul className={ styles.footer__icons }>
         <div className={ styles['footer__icons--label'] }>
           <Image
@@ -65,7 +65,7 @@ const Footer = ({ footerOptions, pageType }: any) => {
           incluso antes de finalizar la compra. <b>"</b>
         </p>
       )}
-    </section>
+    </footer>
   )
 }
 

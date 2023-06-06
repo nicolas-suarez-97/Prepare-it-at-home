@@ -4,12 +4,17 @@ import { Layout } from '../../../sections'
 import Image from 'next/image'
 import { AuthorThumbnail, PillComponent, Separator, TitleComponent } from '../../../components'
 import { getAllBlogs, getBlog } from '../../../services/blog/blogService'
+import { Constants } from '../../../utils/constants'
 
 const BlogDetail = ({ blog }: any) => {
   const { author } = blog
 
   return (
-    <Layout>
+    <Layout
+      title={blog.title}
+      description={blog.description}
+      ogImage={blog.imageUrl}
+    >
       <div className={ styles['blog'] }>
         <section className={ styles['blog__hero'] }>
           <div className={ styles['blog__hero-content'] }>
@@ -32,7 +37,7 @@ const BlogDetail = ({ blog }: any) => {
 export async function getStaticProps({ params }: any) {
   const blog = await getBlog({id: params.blogId})
 
-  return { props: { blog } }
+  return { props: { blog }, revalidate: Constants.TIME_REGENERATION_DAY }
 }
 
 export async function getStaticPaths() {

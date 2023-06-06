@@ -7,7 +7,7 @@ import { LogoComponent, SearchBarComponent } from '../../../components'
 const Header = ({ title, options, placeholder, pageType }: any) => {
 
   return (
-    <nav className={ styles.container }>
+    <header className={ styles.container }>
       <LogoComponent redirect={pageType !== PageType.LANDING}/>
       <ul className={ styles.container__options }>
         { options.map((o: any) => (
@@ -21,7 +21,7 @@ const Header = ({ title, options, placeholder, pageType }: any) => {
           ) : null
       }
 
-    </nav>
+    </header>
   )
 }
 

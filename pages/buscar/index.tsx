@@ -7,7 +7,10 @@ import Image from 'next/image'
 
 const SearchRecipe = ({ query }: any) => {
   return (
-    <Layout>
+    <Layout
+      title='Buscar'
+      description='Encuentra los mejores cursos, artículos y recetas de cocina.'
+    >
       <TitleComponent title={ `Busqueda: ${ query }` } align={ 'center' }/>
       <Separator alignment={ 'center' }/>
       <div className={ styles['not-found'] }>

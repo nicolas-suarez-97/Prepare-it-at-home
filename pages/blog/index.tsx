@@ -4,10 +4,14 @@ import { Layout } from '../../sections'
 import { RecipeBlog } from '../../sections/cross'
 import { BlogPreviewSmall, Separator, TitleComponent } from '../../components'
 import { getAllBlogs } from '../../services/blog/blogService'
+import { Constants } from '../../utils/constants'
 
 const Blog = ({blogs}: any) => {
   return (
-    <Layout>
+    <Layout
+      title='Artículos de Cocina'
+      description='Encuentra los mejores artículos de cocina y tips de cocina.'
+    >
       <section className={ styles['blogs'] } >
         <TitleComponent title="Blogs de Cocina" align={ 'center' }/>
         <Separator alignment={ 'center' }/>
@@ -26,7 +30,7 @@ const Blog = ({blogs}: any) => {
 export async function getStaticProps() {
   const blogs = await getAllBlogs()
 
-  return { props: { blogs } }
+  return { props: { blogs }, revalidate: Constants.TIME_REGENERATION_DAY }
 }
 
 export default Blog
