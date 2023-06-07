@@ -8,7 +8,9 @@ const nextConfig = {
             'cdn.pixabay.com',
             'png.pngtree.com',
             'cdn.discordapp.com',
-            'static.vecteezy.com'
+            'static.vecteezy.com',
+            'images.unsplash.com',
+            'this-person-does-not-exist.com'
         ]
     }
 }

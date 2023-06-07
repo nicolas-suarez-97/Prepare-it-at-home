@@ -86,9 +86,16 @@
   &__steps {
     padding: $separation-16;
 
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: $separation-32;
+    }
+
     &-item {
       text-align: justify;
       display: flex;
+      justify-content: space-around;
       gap: $separation-32;
 
       & p {
