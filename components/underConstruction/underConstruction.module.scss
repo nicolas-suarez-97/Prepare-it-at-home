@@ -1,0 +1,19 @@
+@import "styles/globals.module";
+
+.under-construction {
+  text-align: center;
+
+  &__image {
+    position: relative;
+    width: 50%;
+    height: 40vh;
+    margin: 0 auto;
+  }
+
+  &__buttons {
+    display: flex;
+    margin: $separation-32 0;
+    gap: $separation-32;
+    justify-content: center;
+  }
+}

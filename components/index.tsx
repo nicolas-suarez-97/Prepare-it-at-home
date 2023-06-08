@@ -16,6 +16,7 @@ import TitleComponent from './titleComponent/titleComponent'
 import SearchBarComponent from './searchBarComponent/searchBarComponent'
 import AuthorThumbnail from './authorThumbnail/authorThumbnail'
 import PillComponent from './pillComponent/pillComponent'
+import UnderConstruction from './underConstruction/underConstruction'
 
 export {
   ActionButton,
@@ -36,4 +37,5 @@ export {
   SearchBarComponent,
   AuthorThumbnail,
   PillComponent,
+  UnderConstruction,
 }
