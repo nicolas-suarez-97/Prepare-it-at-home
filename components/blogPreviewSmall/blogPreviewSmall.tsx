@@ -13,7 +13,7 @@ const BlogPreviewSmall = ({ blog }: any) => {
         <Image src={imageUrl} alt="" fill/>
       </div>
       <div className={styles['preview-small__content']}>
-        <p className={styles['preview-small__content-date']}>{creationDate}</p>
+        <p className={styles['preview-small__content-date']}>{new Date(creationDate).toDateString()}</p>
         <h4 className={styles['preview-small__content-title']}>{title}</h4>
         <p className={styles['preview-small__content-description']}>{description}</p>
       </div>

@@ -18,7 +18,7 @@ const BlogDetail = ({ blog }: any) => {
       <div className={ styles['blog'] }>
         <section className={ styles['blog__hero'] }>
           <div className={ styles['blog__hero-content'] }>
-            <p className={ styles['blog__date'] }>{ blog.creationDate }</p>
+            <p className={ styles['blog__date'] }>{ new Date(blog.creationDate).toDateString() }</p>
             <TitleComponent title={blog.title} />
             <PillComponent label={blog.category} fill fillType={'secondary'} />
             <Separator />
