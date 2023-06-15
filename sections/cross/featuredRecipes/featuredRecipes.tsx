@@ -12,7 +12,7 @@ const FeaturedRecipes = ({recipes}: Props) => {
     <section className={styles['featured']}>
       <h2 className={styles['featured__title']}>Recetas Recomendadas</h2>
       <div className={styles['featured__content']}>
-        {recipes.map((r: RecipePreviewType, index: number) => (
+        {recipes.map((r: RecipePreviewType, index: number) => index <= 5 && (
           <RecipePreview
             key={index}
             recipe={r}
