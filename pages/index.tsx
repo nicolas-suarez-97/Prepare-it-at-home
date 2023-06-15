@@ -6,8 +6,9 @@ import styles from './index.module.scss';
 import { getAllRecipes } from '../services/recipes/recipesServices'
 import { getAllBlogs } from '../services/blog/blogService'
 import { Constants } from '../utils/constants'
+import { getRandomArray } from '../utils/arrayUtils'
 
-const Home: NextPage = ({ recipes, blogs }: any) => {
+const Home: NextPage = ({ recipes, blogs, randomRecipes }: any) => {
   const categories = [
     {
       label: 'Appetizers',
@@ -53,7 +54,7 @@ const Home: NextPage = ({ recipes, blogs }: any) => {
       {/*<CategoryCarousel categories={categories}/>*/}
       <RecipeBlog blogs={blogs}/>
       {/*<NewsLetterSubscribe />*/}
-      <FeaturedRecipes recipes={recipes}/>
+      <FeaturedRecipes recipes={randomRecipes}/>
     </Layout>
   )
 }
@@ -61,8 +62,9 @@ const Home: NextPage = ({ recipes, blogs }: any) => {
 export async function getStaticProps() {
   const recipes = await getAllRecipes()
   const blogs = await getAllBlogs()
+  const randomRecipes = getRandomArray(recipes);
 
-  return { props: { recipes, blogs }, revalidate: Constants.TIME_REGENERATION_DAY }
+  return { props: { recipes, blogs, randomRecipes }, revalidate: Constants.TIME_REGENERATION_DAY }
 }
 
 export default Home
