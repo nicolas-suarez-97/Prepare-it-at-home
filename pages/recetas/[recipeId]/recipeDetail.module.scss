@@ -136,8 +136,10 @@
     }
 
     &__image {
-      width: 100%;
+      width: 120vw;
       margin: auto;
+      margin: 0 -50px;
+      border-radius: 0;
     }
 
     &__content {
@@ -182,5 +184,10 @@
 @media (max-width: $mobile-screen) {
   .recipe {
     padding: 0;
+
+    &__image {
+      height: 65vw;
+      margin: 0 -30px;
+    }
   }
 }

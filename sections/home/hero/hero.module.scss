@@ -59,3 +59,11 @@
   }
   
 }
+
+@media (max-width: $mobile-screen) {
+  .hero {
+    &__title {
+      font-size: 28px;
+    }
+  }
+}

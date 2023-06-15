@@ -19,5 +19,12 @@
   .title {
     text-align: center;
     margin: 0 auto $separation-32;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: $mobile-screen) {
+  .title {
+    font-size: 26px;
   }
 }
