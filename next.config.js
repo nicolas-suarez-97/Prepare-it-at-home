@@ -10,7 +10,8 @@ const nextConfig = {
             'cdn.discordapp.com',
             'static.vecteezy.com',
             'images.unsplash.com',
-            'this-person-does-not-exist.com'
+            'this-person-does-not-exist.com',
+            'img.freepik.com'
         ]
     }
 }

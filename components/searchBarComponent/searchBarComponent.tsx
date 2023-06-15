@@ -22,7 +22,12 @@ const SearchBarComponent = ({ placeholder, searchPath = Routes.SEARCH }: Props) 
   return (
     <form onSubmit={ handleSearch } className={ styles['search-bar'] }>
       <IconComponent name={ Icons.SEARCH } onClick={handleSearch} />
-      <input type="text" placeholder={ placeholder } value={query} onChange={({target}) => setQuery(target.value)}/>
+      <input
+        type="text"
+        placeholder={ placeholder }
+        value={query}
+        onChange={({target}) => setQuery(target.value)}
+      />
     </form>
   )
 }
