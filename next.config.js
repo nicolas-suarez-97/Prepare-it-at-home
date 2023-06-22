@@ -11,7 +11,8 @@ const nextConfig = {
             'static.vecteezy.com',
             'images.unsplash.com',
             'this-person-does-not-exist.com',
-            'img.freepik.com'
+            'img.freepik.com',
+            'th.bing.com'
         ]
     }
 }
