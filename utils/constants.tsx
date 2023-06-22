@@ -20,7 +20,7 @@ const LandingIds = {
 }
 
 const Constants = {
-    URL: 'https://preparalo-en-casa.vercel.app',
+    URL: 'https://www.preparaloencasa.co',
     TIME_REGENERATION_DAY: 86400,
 }
 
