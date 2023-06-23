@@ -7,6 +7,7 @@ import { getAllBlogs } from '../../services/blog/blogService'
 import { Constants } from '../../utils/constants'
 
 const Blog = ({blogs}: any) => {
+  console.log(blogs)
   return (
     <Layout
       title='Artículos de Cocina'
@@ -18,7 +19,7 @@ const Blog = ({blogs}: any) => {
         <RecipeBlog blogs={ blogs } mainPage={ true }/>
         <Separator alignment={ 'center' }/>
         <div className={ styles['blogs__content'] }>
-          { blogs.map((blog: any, index: number) => index > 4 && (
+          { blogs.map((blog: any, index: number) => index >= 4 && (
             <BlogPreviewSmall blog={ blog } key={ index }/>
           )) }
         </div>
