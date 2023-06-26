@@ -20,6 +20,7 @@ type Links = {
 export type CourseType = {
     _id?: any,
     id: string,
+    active: boolean,
     creationDate: Date,
     modificationDate: Date,
     description: string,

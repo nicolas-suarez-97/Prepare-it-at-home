@@ -170,7 +170,7 @@ const Landing = ({landingData}: Props) => {
 
 export async function getStaticProps({params}: any) {
     if (params.landing === 'new') {
-        const landingData: CourseType = await getCourse({id: 'landing'})
+        const landingData: CourseType = await getCourse({id: 'cocteleria-de-autor'})
         landingData._id = null;
         landingData.id = 'new id'
 

@@ -31,7 +31,7 @@ const Courses = ({courses}: Props) => {
 }
 
 export async function getStaticProps() {
-  const courses: CourseType[] = await getAllCourses()
+  const courses: CourseType[] = (await getAllCourses()).filter((course: CourseType) => course.active)
 
   return { props: { courses }, revalidate: Constants.TIME_REGENERATION_DAY }
 }
