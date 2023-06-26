@@ -12,7 +12,9 @@ const nextConfig = {
             'images.unsplash.com',
             'this-person-does-not-exist.com',
             'img.freepik.com',
-            'th.bing.com'
+            'th.bing.com',
+            'static-media.hotmart.com',
+            'cursosdecocina.tv'
         ]
     }
 }
