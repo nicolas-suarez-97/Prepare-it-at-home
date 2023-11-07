@@ -22,7 +22,7 @@ const Layout = (props: any) => {
   const footerOptions: any = [
     { path: Routes.ABOUT_US, label: 'Nosotros' },
 //    { path: Routes.CONTACT, label: 'Contacto' },
-    { path: Routes.TERMS_AND_CONDITIONS, label: 'Terminos y Condiciones' },
+//    { path: Routes.TERMS_AND_CONDITIONS, label: 'Terminos y Condiciones' },
     { path: Routes.FAQ, label: 'Faq' },
   ]
 
