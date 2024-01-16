@@ -5,7 +5,7 @@ import * as ga from '../lib/ga';
 import React, {useEffect} from "react";
 import {useRouter} from "next/router";
 import Head from "next/head";
-import Image from "next/image";
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -25,17 +25,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [router.events])
 
   return <>
-    <Head>
-      <meta name="facebook-domain-verification" content="c7pns0ybtixl43feet5fxorxqs5juj"/>
-      <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
-      <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}/>
-      <script
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Head>
+          <meta name="facebook-domain-verification" content="c7pns0ybtixl43feet5fxorxqs5juj"/>
+          <link
+              rel="stylesheet"
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          />
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}/>
+          <script
+              dangerouslySetInnerHTML={{
+                  __html: `
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());
@@ -43,12 +43,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                           page_path: window.location.pathname,
                         });
                     `,
-          }}
-      />
-      <script
-          id="fb-pixel"
-          dangerouslySetInnerHTML={{
-            __html: `
+              }}
+          />
+          <script
+              id="fb-pixel"
+              dangerouslySetInnerHTML={{
+                  __html: `
               !function(f,b,e,v,n,t,s)
               {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
               n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -60,20 +60,16 @@ function MyApp({ Component, pageProps }: AppProps) {
               fbq('init', ${fbq.FB_PIXEL_ID});
               fbq('track', 'PageView');
             `
-          }}
-      />
-      <noscript>
-        <Image
-            height="1"
-            width="1"
-            style={{display: 'none'}}
-            src={`https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1`}
-            alt="fb_pageview"
-        />
-      </noscript>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    </Head>
-    <Component {...pageProps} />
+              }}
+          />
+          <noscript
+              dangerouslySetInnerHTML={{
+                  __html: `<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1" alt="fb_tag"/>`
+              }}
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+      </Head>
+      <Component {...pageProps} />
   </>
 }
 
