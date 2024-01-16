@@ -62,13 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             `
           }}
       />
-      <img
-          height="1"
-          width="1"
-          style={{display: 'none'}}
-          src={`https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1`}
-          alt="fb_pageview"
-      />
+
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </Head>
     <Component {...pageProps} />
