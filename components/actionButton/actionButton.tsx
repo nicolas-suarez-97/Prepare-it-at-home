@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./actionButton.module.scss";
 import * as ga from '../../lib/ga';
 import {LinkDataType} from "../../types";
+import * as fbq from "../../lib/fbpixel";
 
 type Props = {
     linkData: LinkDataType
@@ -24,6 +25,7 @@ const ActionButton = ({linkData}: Props) => {
                 onClick={() => {
                     onClickAction(true)
                     ga.event(gaEvent)
+                    fbq.event("possible_lead")
                 }}
                 className={`${styles.button} ${buttonStyle}`}
                 target="_blank"
@@ -39,6 +41,7 @@ const ActionButton = ({linkData}: Props) => {
                 rel="noreferrer"
                 onClick={() => {
                     ga.event(gaEvent)
+                    fbq.event("possible_lead")
                 }}
             >
                 {label}
