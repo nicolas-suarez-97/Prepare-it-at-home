@@ -1,11 +1,11 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Script from "next/script";
 import * as fbq from "../lib/fbpixel";
 import * as ga from '../lib/ga';
 import React, {useEffect} from "react";
 import {useRouter} from "next/router";
 import Head from "next/head";
+import Image from "next/image";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -62,7 +62,15 @@ function MyApp({ Component, pageProps }: AppProps) {
             `
           }}
       />
-
+      <noscript>
+        <Image
+            height="1"
+            width="1"
+            style={{display: 'none'}}
+            src={`https://www.facebook.com/tr?id=${fbq.FB_PIXEL_ID}&ev=PageView&noscript=1`}
+            alt="fb_pageview"
+        />
+      </noscript>
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     </Head>
     <Component {...pageProps} />
