@@ -25,7 +25,7 @@ const ActionButton = ({linkData}: Props) => {
                 onClick={() => {
                     onClickAction(true)
                     ga.event(gaEvent)
-                    fbq.event("possible_lead")
+                    fbq.event("ViewContent")
                 }}
                 className={`${styles.button} ${buttonStyle}`}
                 target="_blank"
@@ -41,7 +41,7 @@ const ActionButton = ({linkData}: Props) => {
                 rel="noreferrer"
                 onClick={() => {
                     ga.event(gaEvent)
-                    fbq.event("possible_lead")
+                    fbq.event("ViewContent")
                 }}
             >
                 {label}
