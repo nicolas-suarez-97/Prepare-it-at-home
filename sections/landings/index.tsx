@@ -10,6 +10,8 @@ import PricingSection from "./pricingSection/pricingSection";
 import ProducerSection from "./producerSection/producerSection";
 import ReviewsSection from "./reviewsSection/reviewsSection";
 import TopBannerSection from "./topBannerSection/topBannerSection";
+import ImageReviewsSection from "./imagesReviewsSection/imageReviewsSection";
+import FacebookReviewsSection from "./facebookReviewsSection/facebookReviewsSection";
 
 export {
     AchievementsSection,
@@ -24,4 +26,6 @@ export {
     ProducerSection,
     ReviewsSection,
     TopBannerSection,
+    ImageReviewsSection,
+    FacebookReviewsSection,
 }

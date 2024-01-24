@@ -2,11 +2,11 @@ import React, {useEffect, useState} from "react";
 import { Layout } from "../../../sections";
 import {
     AchievementsSection,
-    BenefitsSection,
+    BenefitsSection, FacebookReviewsSection,
     FaqSection,
     GallerySection,
     GetStartedSection,
-    HookSection,
+    HookSection, ImageReviewsSection,
     ModulesSection,
     PaymentModal,
     PricingSection,
@@ -39,9 +39,10 @@ const Course = ({course, courseData}: Props) => {
         pricing,
         producer,
         redirect,
-        reviews,
         value,
         videoUrl,
+        imageReviews,
+        facebookReviews,
     } = courseData;
 
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -101,9 +102,15 @@ const Course = ({course, courseData}: Props) => {
                     benefits={benefits}
                 />
 
-                <ReviewsSection
-                    reviews={reviews}
+                <ImageReviewsSection
+                    imageReviews={imageReviews}
                 />
+
+                { facebookReviews ? (
+                    <FacebookReviewsSection
+                        facebookReviews={facebookReviews}
+                    />
+                ) : null}
 
                 <GetStartedSection
                     getStarted={getStarted}

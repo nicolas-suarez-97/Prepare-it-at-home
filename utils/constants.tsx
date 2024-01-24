@@ -17,6 +17,8 @@ const LandingIds = {
     PRICING_SECTION: 'pricing_section',
     PRODUCER_SECTION: 'producer_section',
     REVIEWS_SECTION: 'reviews_section',
+    IMAGE_REVIEWS_SECTION: 'image_reviews_section',
+    FACEBOOK_REVIEWS_SECTION: 'facebook_reviews_section',
 }
 
 const Constants = {

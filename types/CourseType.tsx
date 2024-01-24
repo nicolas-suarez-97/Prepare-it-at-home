@@ -41,4 +41,6 @@ export type CourseType = {
     reviews: ReviewsSectionType,
     value: number,
     videoUrl: string,
+    imageReviews: GallerySectionType,
+    facebookReviews: GallerySectionType,
 }
