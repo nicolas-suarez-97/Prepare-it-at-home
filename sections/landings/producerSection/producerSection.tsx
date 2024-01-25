@@ -10,7 +10,7 @@ type Props = {
 const ProducerSection = ({producer}: Props) => {
     const {title, description} = producer
     return (
-        <section id={LandingIds.PRODUCER_SECTION}>
+        <section id={LandingIds.PRODUCER_SECTION} className={styles.producer}>
             <h2 className={styles.title}>{title}</h2>
             <p className={styles.content} dangerouslySetInnerHTML={{__html: description}} />
         </section>

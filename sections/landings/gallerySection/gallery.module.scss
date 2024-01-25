@@ -41,6 +41,11 @@
   .gallery {
     padding: 0;
 
+    &__container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     &__image {
       max-width: 100%;
     }

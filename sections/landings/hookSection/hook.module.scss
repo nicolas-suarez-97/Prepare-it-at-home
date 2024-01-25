@@ -31,6 +31,7 @@
 @media (max-width: $mobile-screen) {
   .hook {
     margin: 0;
+    display: none;
     &__actionButton {
       width: 100%;
     }

@@ -3,3 +3,10 @@
 .producer {
 
 }
+
+
+@media (max-width: $mobile-screen) {
+  .producer {
+    display: none;
+  }
+}

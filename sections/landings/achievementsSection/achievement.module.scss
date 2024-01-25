@@ -26,8 +26,8 @@
 
     & > span {
       font-size: xx-large;
-      height: 50px;
-      width: 50px;
+      min-height: 50px;
+      min-width: 50px;
       border-radius: $border-radius-1;
       text-align: center;
       margin-bottom: $separation-8;
@@ -35,11 +35,6 @@
       justify-content: center;
       align-items: center;
 
-    }
-
-    &:hover {
-      transform: translateY(-10px);
-      box-shadow: $card-elevation-3;
     }
   }
 }
@@ -97,10 +92,13 @@
     }
     &__items {
       max-width: 100%;
-      min-height: 250px;
-      padding: $separation-48 $separation-24;
-      margin: $separation-16 0;
-
+      min-height: 100px;
+      padding: $separation-8 $separation-16;
+      margin: $separation-8 0;
+      flex-direction: row;
+      align-items: center;
+      font-size: small;
+      gap: $separation-24;
     }
   }
 }

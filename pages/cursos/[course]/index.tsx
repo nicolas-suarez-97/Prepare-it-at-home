@@ -12,7 +12,7 @@ import {
     PricingSection,
     ProducerSection,
     ReviewsSection,
-    TopBannerSection,
+    TopBannerSection, TopCTASection,
 } from "../../../sections/landings";
 import {CourseType, LinkDataType} from "../../../types";
 import {getAllCourses, getCourse} from "../../../services/landing/courseProvider";
@@ -77,11 +77,6 @@ const Course = ({course, courseData}: Props) => {
                     linkData={linkData}
                 />
 
-                <HookSection
-                    hook={hook}
-                    linkData={linkData}
-                />
-
                 <AchievementsSection
                     achievement={achievement}
                 />
@@ -94,12 +89,12 @@ const Course = ({course, courseData}: Props) => {
                     producer={producer}
                 />
 
-                <ModulesSection
-                    modules={modules}
-                />
-
                 <BenefitsSection
                     benefits={benefits}
+                />
+
+                <ModulesSection
+                    modules={modules}
                 />
 
                 <ImageReviewsSection
@@ -126,6 +121,8 @@ const Course = ({course, courseData}: Props) => {
                     linkData={linkData}
                     value={value}
                 />
+
+                <TopCTASection />
 
                 <PaymentModal
                     isModalOpen={isModalOpen}

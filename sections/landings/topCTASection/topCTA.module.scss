@@ -1,0 +1,89 @@
+@import "styles/globals.module";
+
+.pricing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  margin: 0 auto;
+  //  background: linear-gradient(0deg, $secondary-color 0%, $secondary-color 25%, rgba(254,245,245, 0.90) 77%, rgba(254,245,245,0.80) 100%);
+  max-width: 100%;
+  z-index: 9;
+  border-radius:  0 0;
+  transition: all ease-in-out 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $separation-8 $separation-24;
+
+  & > h2 {
+    font-weight: bold;
+    margin: 0;
+    color: white;
+    font-size: large;
+  }
+
+  & > h6 {
+    color: $primary-color;
+    font-size: large;
+    margin: 0;
+  }
+
+  & > h5 {
+    font-size: small;
+    color: white;
+    margin: 0;
+    font-weight: lighter;
+  }
+
+  &__countdown {
+    color: white;
+  }
+
+  &__button {
+    height: 40px;
+  }
+
+  &__close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.hide {
+  transform: translateY(-100px);
+}
+
+@media (max-width: $mobile-screen) {
+  .pricing {
+    padding: $separation-8 $separation-16;
+
+    & > h2 {
+      font-size: medium;
+    }
+
+    & > h6 {
+      font-size: medium;
+    }
+
+    & > h5 {
+      font-size: medium;
+    }
+
+    &__button {
+      height: 50px;
+    }
+
+    &__close {
+      position: absolute;
+      right: 5px;
+      top: 12px;
+      cursor: pointer;
+    }
+  }
+}

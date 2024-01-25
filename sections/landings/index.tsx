@@ -12,6 +12,7 @@ import ReviewsSection from "./reviewsSection/reviewsSection";
 import TopBannerSection from "./topBannerSection/topBannerSection";
 import ImageReviewsSection from "./imagesReviewsSection/imageReviewsSection";
 import FacebookReviewsSection from "./facebookReviewsSection/facebookReviewsSection";
+import TopCTASection from "./topCTASection/topCTASection";
 
 export {
     AchievementsSection,
@@ -28,4 +29,5 @@ export {
     TopBannerSection,
     ImageReviewsSection,
     FacebookReviewsSection,
+    TopCTASection,
 }
